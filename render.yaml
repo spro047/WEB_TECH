@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: travel-planner-web
+    env: node
+    plan: free
+    rootDir: .
+    buildCommand: cd Travel_Planner/backend && npm install
+    startCommand: cd Travel_Planner/backend && node server.js
+    envVars:
+      - key: MONGO_URI
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+      - key: NODE_VERSION
+        value: 18.x
