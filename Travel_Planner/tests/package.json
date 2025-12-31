@@ -1,0 +1,21 @@
+{
+    "name": "travel-planner-tests",
+    "version": "1.0.0",
+    "description": "Automated Selenium tests for Travel Planner",
+    "main": "setup.js",
+    "scripts": {
+        "test": "mocha ui/*.test.js --timeout 30000"
+    },
+    "keywords": [
+        "selenium",
+        "test",
+        "mocha"
+    ],
+    "author": "Antigravity",
+    "license": "ISC",
+    "dependencies": {
+        "chai": "^4.3.7",
+        "mocha": "^10.2.0",
+        "selenium-webdriver": "^4.16.0"
+    }
+}

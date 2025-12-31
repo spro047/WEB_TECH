@@ -57,7 +57,7 @@ function determineTripStatus(trip) {
     today.setHours(0, 0, 0, 0);
     const endDate = new Date(trip.endDate);
     endDate.setHours(0, 0, 0, 0);
-    
+
     if (endDate < today) {
         return 'completed';
     }
@@ -73,7 +73,7 @@ async function fetchTrips() {
     }
 
     try {
-        const response = await fetch('http://localhost:5000/api/trips', {
+        const response = await fetch('/api/trips', {
             headers: {
                 'Authorization': `Bearer ${token}`
             }
@@ -105,13 +105,13 @@ function renderTripCard(trip) {
     const status = determineTripStatus(trip);
     const statusClass = status === 'completed' ? 'completed' : status === 'cancelled' ? 'cancelled' : 'upcoming';
     const statusText = status === 'completed' ? 'Completed' : status === 'cancelled' ? 'Cancelled' : 'Upcoming';
-    
+
     const bookingId = generateBookingId(trip._id);
     const destinationName = formatDestinationName(trip.destination);
     const imageUrl = getDestinationImage(trip.destination);
-    
-    const activitiesList = trip.activities && trip.activities.length > 0 
-        ? trip.activities.join(', ') 
+
+    const activitiesList = trip.activities && trip.activities.length > 0
+        ? trip.activities.join(', ')
         : 'No activities selected';
 
     let actionButtons = '';
@@ -186,7 +186,7 @@ function renderTripCard(trip) {
 // Load and display trips
 async function loadTrips() {
     const trips = await fetchTrips();
-    
+
     const upcomingTrips = trips.filter(trip => determineTripStatus(trip) === 'upcoming');
     const pastTrips = trips.filter(trip => determineTripStatus(trip) === 'completed');
     const cancelledTrips = trips.filter(trip => trip.status === 'cancelled');
@@ -255,22 +255,22 @@ function downloadTicket(tripId) {
         return;
     }
 
-    fetch(`http://localhost:5000/api/trips`, {
+    fetch(`/api/trips`, {
         headers: {
             'Authorization': `Bearer ${token}`
         }
     })
-    .then(res => res.json())
-    .then(trips => {
-        const trip = trips.find(t => t._id === tripId);
-        if (!trip) {
-            alert('Trip not found');
-            return;
-        }
+        .then(res => res.json())
+        .then(trips => {
+            const trip = trips.find(t => t._id === tripId);
+            if (!trip) {
+                alert('Trip not found');
+                return;
+            }
 
-        // Create ticket content
-        const duration = calculateDuration(trip.startDate, trip.endDate);
-        const ticketContent = `
+            // Create ticket content
+            const duration = calculateDuration(trip.startDate, trip.endDate);
+            const ticketContent = `
 TRAVEL PLANNER - TRAVEL TICKET
 ================================
 
@@ -290,21 +290,21 @@ Total Amount: ₹${trip.totalPrice ? trip.totalPrice.toLocaleString('en-IN') : '
 Thank you for choosing TravelPlanner!
         `;
 
-        // Create and download file
-        const blob = new Blob([ticketContent], { type: 'text/plain' });
-        const url = window.URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = `ticket-${generateBookingId(tripId)}.txt`;
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
-        window.URL.revokeObjectURL(url);
-    })
-    .catch(error => {
-        console.error('Error downloading ticket:', error);
-        alert('Failed to download ticket');
-    });
+            // Create and download file
+            const blob = new Blob([ticketContent], { type: 'text/plain' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `ticket-${generateBookingId(tripId)}.txt`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            window.URL.revokeObjectURL(url);
+        })
+        .catch(error => {
+            console.error('Error downloading ticket:', error);
+            alert('Failed to download ticket');
+        });
 }
 
 // Download invoice
@@ -320,27 +320,27 @@ function modifyTrip(tripId) {
         return;
     }
 
-    fetch(`http://localhost:5000/api/trips`, {
+    fetch(`/api/trips`, {
         headers: {
             'Authorization': `Bearer ${token}`
         }
     })
-    .then(res => res.json())
-    .then(trips => {
-        const trip = trips.find(t => t._id === tripId);
-        if (!trip) {
-            alert('Trip not found');
-            return;
-        }
+        .then(res => res.json())
+        .then(trips => {
+            const trip = trips.find(t => t._id === tripId);
+            if (!trip) {
+                alert('Trip not found');
+                return;
+            }
 
-        // Store trip data for modification
-        localStorage.setItem('modifyTrip', JSON.stringify(trip));
-        window.location.href = 'trip-builder.html';
-    })
-    .catch(error => {
-        console.error('Error fetching trip:', error);
-        alert('Failed to load trip details');
-    });
+            // Store trip data for modification
+            localStorage.setItem('modifyTrip', JSON.stringify(trip));
+            window.location.href = 'trip-builder.html';
+        })
+        .catch(error => {
+            console.error('Error fetching trip:', error);
+            alert('Failed to load trip details');
+        });
 }
 
 // Cancel trip
@@ -356,7 +356,7 @@ async function cancelTrip(tripId) {
     }
 
     try {
-        const response = await fetch(`http://localhost:5000/api/trips/${tripId}/cancel`, {
+        const response = await fetch(`/api/trips/${tripId}/cancel`, {
             method: 'PUT',
             headers: {
                 'Authorization': `Bearer ${token}`,
@@ -393,15 +393,15 @@ function showTrips(type) {
     document.querySelectorAll('.trips-list').forEach(list => {
         list.classList.remove('active');
     });
-    
+
     // Remove active class from all tabs
     document.querySelectorAll('.trip-tab').forEach(tab => {
         tab.classList.remove('active');
     });
-    
+
     // Show selected trip list
     document.getElementById(`${type}-trips`).classList.add('active');
-    
+
     // Mark tab as active
     event.target.classList.add('active');
 }

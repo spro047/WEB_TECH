@@ -226,7 +226,7 @@ async function processPayment() {
     }
 
     try {
-        const response = await fetch('http://localhost:5000/api/trips', {
+        const response = await fetch('/api/trips', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
