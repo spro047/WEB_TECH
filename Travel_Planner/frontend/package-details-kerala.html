@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kerala Backwaters - Package Details | TravelPlanner</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/package-details.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo"><i class="fas fa-plane"></i><span>TravelPlanner</span></div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="holidays.html">Holidays</a></li>
+
+                    <li><a href="trip-builder.html">Trip Builder</a></li>
+                    <li><a href="my-trips.html">My Trips</a></li>
+
+                    <li><a href="support.html">Support</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <a href="login.html" class="btn-login">Login</a>
+                    <a href="signup.html" class="btn-signup">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="package-header"
+        style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/kerala.png') center/cover;">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html">Home</a> / <a href="holidays.html">Holidays</a> / <span>Kerala Backwaters</span>
+            </div>
+            <h1>Kerala Backwaters</h1>
+            <div class="package-meta">
+                <span><i class="fas fa-clock"></i> 6 Days / 5 Nights</span>
+                <span><i class="fas fa-map-marker-alt"></i> Kerala, India</span>
+                <span><i class="fas fa-star"></i> 4.8 (312 Reviews)</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="gallery-section">
+        <div class="container">
+            <div class="gallery-main">
+                <img src="images/kerala.png" alt="Kerala Backwaters" class="gallery-image active">
+                <img src="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800" alt="Houseboat"
+                    class="gallery-image">
+                <img src="https://images.unsplash.com/photo-1593693397690-362cb9666fc2?w=800" alt="Munnar Tea Gardens"
+                    class="gallery-image">
+                <button class="gallery-nav prev" onclick="prevGalleryImage()"><i
+                        class="fas fa-chevron-left"></i></button>
+                <button class="gallery-nav next" onclick="nextGalleryImage()"><i
+                        class="fas fa-chevron-right"></i></button>
+            </div>
+            <div class="gallery-thumbnails">
+                <img src="images/kerala.png" alt="Thumb 1" onclick="showGalleryImage(0)" class="active">
+                <img src="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800" alt="Thumb 2"
+                    onclick="showGalleryImage(1)">
+                <img src="https://images.unsplash.com/photo-1593693397690-362cb9666fc2?w=800" alt="Thumb 3"
+                    onclick="showGalleryImage(2)">
+            </div>
+        </div>
+    </section>
+
+    <section class="package-content-section">
+        <div class="container">
+            <div class="content-wrapper">
+                <div class="main-content">
+                    <div class="content-block">
+                        <h2>Overview</h2>
+                        <p>Discover the serene backwaters, misty hill stations, and rich culture of Kerala, "God's Own
+                            Country". This 6-day tour takes you from the rolling tea gardens of Munnar to the tranquil
+                            backwaters of Alleppey.</p>
+                    </div>
+
+                    <div class="content-block">
+                        <h2>Day-wise Itinerary</h2>
+                        <div class="itinerary">
+                            <div class="itinerary-item active">
+                                <div class="itinerary-header">
+                                    <span class="day-number">Day 1</span>
+                                    <h3>Arrival in Kochi - Transfer to Munnar</h3>
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                                <div class="itinerary-content">
+                                    <p><strong>Morning:</strong> Arrive at Kochi Airport. Drive to Munnar (4 hrs),
+                                        enjoying scenic waterfalls en route.</p>
+                                    <p><strong>Evening:</strong> Check-in at resort and relax.</p>
+                                </div>
+                            </div>
+                            <div class="itinerary-item">
+                                <div class="itinerary-header">
+                                    <span class="day-number">Day 2</span>
+                                    <h3>Munnar Sightseeing</h3>
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                                <div class="itinerary-content">
+                                    <p><strong>Full Day:</strong> Visit Eravikulam National Park, Tea Museum, Mattupetty
+                                        Dam, and Eco Point.</p>
+                                </div>
+                            </div>
+                            <div class="itinerary-item">
+                                <div class="itinerary-header">
+                                    <span class="day-number">Day 3</span>
+                                    <h3>Munnar to Thekkady</h3>
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                                <div class="itinerary-content">
+                                    <p><strong>Morning:</strong> Drive to Thekkady. Visit Periyar Wildlife Sanctuary.
+                                    </p>
+                                    <p><strong>Evening:</strong> Optional Elephant Ride or Spice Plantation tour.</p>
+                                </div>
+                            </div>
+                            <div class="itinerary-item">
+                                <div class="itinerary-header">
+                                    <span class="day-number">Day 4</span>
+                                    <h3>Thekkady to Alleppey</h3>
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                                <div class="itinerary-content">
+                                    <p><strong>Afternoon:</strong> Board a traditional Houseboat in Alleppey backwaters.
+                                        Lunch and Dinner on board.</p>
+                                </div>
+                            </div>
+                            <div class="itinerary-item">
+                                <div class="itinerary-header">
+                                    <span class="day-number">Day 5</span>
+                                    <h3>Alleppey to Kochi</h3>
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                                <div class="itinerary-content">
+                                    <p><strong>Morning:</strong> Drive to Kochi. Visit Chinese Fishing Nets, St. Francis
+                                        Church.</p>
+                                    <p><strong>Evening:</strong> Shopping at Jew Town.</p>
+                                </div>
+                            </div>
+                            <div class="itinerary-item">
+                                <div class="itinerary-header">
+                                    <span class="day-number">Day 6</span>
+                                    <h3>Departure</h3>
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                                <div class="itinerary-content">
+                                    <p><strong>Morning:</strong> Transfer to Kochi Airport for departure.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="booking-sidebar">
+                    <div class="booking-card">
+                        <div class="price-section">
+                            <span class="price-label">Starting from</span>
+                            <span class="price">₹28,999</span>
+                            <span class="price-per">per person</span>
+                        </div>
+                        <div class="booking-form">
+                            <div class="form-group">
+                                <label>Travel Date</label>
+                                <input type="date" id="booking-date">
+                            </div>
+                            <div class="form-group">
+                                <label>Number of Travelers</label>
+                                <select id="booking-travelers">
+                                    <option>2 Travelers</option>
+                                    <option>4 Travelers</option>
+                                </select>
+                            </div>
+                            <div class="total-price">
+                                <span>Total Price</span>
+                                <span class="total-amount">₹28,999</span>
+                            </div>
+                            <a href="javascript:void(0)" onclick="handlePackageBooking('Kerala Backwaters', 28999, 6)"
+                                class="btn-book-now">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2024 TravelPlanner. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        let currentImageIndex = 0;
+        const images = document.querySelectorAll('.gallery-image');
+        const thumbnails = document.querySelectorAll('.gallery-thumbnails img');
+
+        function showGalleryImage(index) {
+            images.forEach(img => img.classList.remove('active'));
+            thumbnails.forEach(thumb => thumb.classList.remove('active'));
+            images[index].classList.add('active');
+            thumbnails[index].classList.add('active');
+            currentImageIndex = index;
+        }
+
+        function nextGalleryImage() { showGalleryImage((currentImageIndex + 1) % images.length); }
+        function prevGalleryImage() { showGalleryImage((currentImageIndex - 1 + images.length) % images.length); }
+
+        document.querySelectorAll('.itinerary-header').forEach(header => {
+            header.addEventListener('click', () => { header.parentElement.classList.toggle('active'); });
+        });
+    </script>
+</body>
+
+</html>

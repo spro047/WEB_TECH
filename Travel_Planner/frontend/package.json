@@ -1,0 +1,12 @@
+{
+  "name": "travel-planner-frontend",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "live-server --port=3000 .",
+    "start": "npm run dev"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.1"
+  }
+}

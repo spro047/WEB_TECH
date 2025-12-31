@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile - TravelPlanner</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/auth.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <i class="fas fa-plane"></i>
+                    <span>TravelPlanner</span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="holidays.html">Holidays</a></li>
+
+                    <li><a href="trip-builder.html">Trip Builder</a></li>
+                    <li><a href="my-trips.html">My Trips</a></li>
+
+                    <li><a href="support.html">Support</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <a href="login.html" class="btn-login">Login</a>
+                    <a href="signup.html" class="btn-signup">Sign Up</a>
+                </div>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Profile Section -->
+    <section class="auth-section">
+        <div class="container">
+            <div class="auth-container">
+                <div class="auth-card">
+                    <div class="auth-header">
+                        <h2>My Profile</h2>
+                        <p>Manage your account information</p>
+                    </div>
+                    <form class="auth-form" onsubmit="event.preventDefault(); updateProfile();">
+                        <div class="form-group">
+                            <label><i class="fas fa-user"></i> Full Name</label>
+                            <input type="text" id="profile-name" placeholder="Enter your name" required>
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fas fa-envelope"></i> Email Address</label>
+                            <input type="email" id="profile-email" placeholder="Enter your email" required>
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fas fa-mobile-alt"></i> Phone Number</label>
+                            <input type="tel" id="profile-phone" placeholder="Enter your phone number" required>
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fas fa-calendar"></i> Date of Birth</label>
+                            <input type="date" id="profile-dob">
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fas fa-map-marker-alt"></i> Address</label>
+                            <textarea id="profile-address" rows="3" placeholder="Enter your address"></textarea>
+                        </div>
+                        <button type="submit" class="btn-auth">Update Profile</button>
+                        <div class="auth-footer">
+                            <a href="my-trips.html"><i class="fas fa-arrow-left"></i> Back to My Trips</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>TravelPlanner</h3>
+                    <p>Your trusted partner for memorable travel experiences.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="holidays.html">Holiday Packages</a></li>
+                        <li><a href="flights.html">Flights</a></li>
+                        <li><a href="hotels.html">Hotels</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="support.html">Help Center</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> +91 1800-123-4567</li>
+                        <li><i class="fas fa-envelope"></i> support@travelplanner.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 TravelPlanner. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Load user data on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            const userData = JSON.parse(localStorage.getItem('userData') || '{}');
+            const profileData = JSON.parse(localStorage.getItem('profileData') || '{}');
+
+            if (userData.name) document.getElementById('profile-name').value = userData.name;
+            if (userData.email) document.getElementById('profile-email').value = userData.email;
+            if (userData.phone) document.getElementById('profile-phone').value = userData.phone;
+            if (profileData.dob) document.getElementById('profile-dob').value = profileData.dob;
+            if (profileData.address) document.getElementById('profile-address').value = profileData.address;
+
+            // Update navigation
+            if (typeof updateNavigationForLogin === 'function') {
+                updateNavigationForLogin();
+            }
+        });
+
+        function updateProfile() {
+            const profileData = {
+                name: document.getElementById('profile-name').value,
+                email: document.getElementById('profile-email').value,
+                phone: document.getElementById('profile-phone').value,
+                dob: document.getElementById('profile-dob').value,
+                address: document.getElementById('profile-address').value
+            };
+
+            // Update userData
+            const userData = {
+                name: profileData.name,
+                email: profileData.email,
+                phone: profileData.phone
+            };
+            localStorage.setItem('userData', JSON.stringify(userData));
+            localStorage.setItem('profileData', JSON.stringify(profileData));
+
+            // Update navigation
+            if (typeof updateNavigationForLogin === 'function') {
+                updateNavigationForLogin();
+            }
+
+            alert('Profile updated successfully!');
+        }
+    </script>
+</body>
+
+</html>

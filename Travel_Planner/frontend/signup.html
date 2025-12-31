@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - TravelPlanner</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/auth.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <i class="fas fa-plane"></i>
+                    <span>TravelPlanner</span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="holidays.html">Holidays</a></li>
+
+                    <li><a href="trip-builder.html">Trip Builder</a></li>
+                    <li><a href="my-trips.html">My Trips</a></li>
+
+                    <li><a href="support.html">Support</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <a href="login.html" class="btn-login">Login</a>
+                    <a href="signup.html" class="btn-signup active">Sign Up</a>
+                </div>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sign Up Section -->
+    <section class="auth-section">
+        <div class="container">
+            <div class="auth-container">
+                <div class="auth-card">
+                    <div class="auth-header">
+                        <h2>Create Your Account</h2>
+                        <p>Join us and start planning your perfect trip</p>
+                    </div>
+                    <form class="auth-form" onsubmit="event.preventDefault(); handleSignup();">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label><i class="fas fa-user"></i> First Name</label>
+                                <input type="text" id="first-name" placeholder="First Name" required>
+                            </div>
+                            <div class="form-group">
+                                <label><i class="fas fa-user"></i> Last Name</label>
+                                <input type="text" id="last-name" placeholder="Last Name" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fas fa-envelope"></i> Email Address</label>
+                            <input type="email" id="signup-email" placeholder="Enter your email" required>
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fas fa-mobile-alt"></i> Phone Number</label>
+                            <input type="tel" id="signup-phone" placeholder="Enter your phone number" required>
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fas fa-lock"></i> Password</label>
+                            <input type="password" id="signup-password" placeholder="Create a password" required>
+                            <small>Must be at least 8 characters</small>
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fas fa-lock"></i> Confirm Password</label>
+                            <input type="password" id="confirm-password" placeholder="Confirm your password" required>
+                        </div>
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="terms" required>
+                            <label for="terms">I agree to the <a href="#">Terms & Conditions</a> and <a href="#">Privacy
+                                    Policy</a></label>
+                        </div>
+                        <button type="submit" class="btn-auth">Create Account</button>
+                        <div class="auth-divider">
+                            <span>OR</span>
+                        </div>
+                        <button type="button" class="btn-otp" onclick="showOTPSignup()">
+                            <i class="fas fa-mobile-alt"></i> Sign Up with OTP
+                        </button>
+                        <div class="auth-footer">
+                            <p>Already have an account? <a href="login.html">Login</a></p>
+                        </div>
+                    </form>
+
+                    <!-- OTP Signup Form -->
+                    <form class="auth-form hidden" id="otp-signup-form"
+                        onsubmit="event.preventDefault(); handleOTPSignup();">
+                        <div class="form-group">
+                            <label><i class="fas fa-mobile-alt"></i> Phone Number</label>
+                            <input type="tel" id="signup-otp-phone" placeholder="Enter your phone number" required>
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fas fa-key"></i> OTP</label>
+                            <input type="text" id="signup-otp-code" placeholder="Enter OTP" maxlength="6" required>
+                            <button type="button" class="btn-resend-otp" onclick="resendSignupOTP()">Resend OTP</button>
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fas fa-user"></i> Full Name</label>
+                            <input type="text" id="signup-name" placeholder="Enter your full name" required>
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fas fa-envelope"></i> Email Address (Optional)</label>
+                            <input type="email" id="signup-otp-email" placeholder="Enter your email">
+                        </div>
+                        <button type="submit" class="btn-auth">Verify & Sign Up</button>
+                        <button type="button" class="btn-back-email" onclick="showEmailSignup()">
+                            <i class="fas fa-arrow-left"></i> Back to Email Signup
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>TravelPlanner</h3>
+                    <p>Your trusted partner for memorable travel experiences.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="holidays.html">Holiday Packages</a></li>
+                        <li><a href="flights.html">Flights</a></li>
+                        <li><a href="hotels.html">Hotels</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="support.html">Help Center</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> +91 1800-123-4567</li>
+                        <li><i class="fas fa-envelope"></i> support@travelplanner.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 TravelPlanner. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        function showOTPSignup() {
+            document.querySelector('.auth-form:not(#otp-signup-form)').classList.add('hidden');
+            document.getElementById('otp-signup-form').classList.remove('hidden');
+        }
+
+        function showEmailSignup() {
+            document.getElementById('otp-signup-form').classList.add('hidden');
+            document.querySelector('.auth-form:not(#otp-signup-form)').classList.remove('hidden');
+        }
+
+        async function handleSignup() {
+            const firstName = document.getElementById('first-name').value;
+            const lastName = document.getElementById('last-name').value;
+            const email = document.getElementById('signup-email').value;
+            const phone = document.getElementById('signup-phone').value;
+            const password = document.getElementById('signup-password').value;
+            const confirmPassword = document.getElementById('confirm-password').value;
+
+            if (password !== confirmPassword) {
+                alert('Passwords do not match!');
+                return;
+            }
+
+            try {
+                const response = await fetch('http://localhost:5000/api/auth/signup', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        username: `${firstName} ${lastName}`,
+                        email,
+                        password
+                    })
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    alert('Account created successfully! Please login.');
+                    window.location.href = 'login.html';
+                } else {
+                    alert(data.message || 'Signup failed.');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('An error occurred. Please make sure the backend server is running.');
+            }
+        }
+
+        function handleOTPSignup() {
+            const phone = document.getElementById('signup-otp-phone').value;
+            const otp = document.getElementById('signup-otp-code').value;
+            const name = document.getElementById('signup-name').value;
+            const email = document.getElementById('signup-otp-email').value;
+
+            // Store login state and user data
+            localStorage.setItem('isLoggedIn', 'true');
+            const userData = {
+                name: name,
+                email: email || '',
+                phone: phone
+            };
+            localStorage.setItem('userData', JSON.stringify(userData));
+
+            // Simulate OTP verification
+            alert('OTP verified! Account created successfully.');
+            window.location.href = 'my-trips.html';
+        }
+
+        function resendSignupOTP() {
+            alert('OTP has been sent to your phone number.');
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Trips - TravelPlanner</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/my-trips.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <i class="fas fa-plane"></i>
+                    <span>TravelPlanner</span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="holidays.html">Holidays</a></li>
+
+                    <li><a href="trip-builder.html">Trip Builder</a></li>
+                    <li><a href="my-trips.html" class="active">My Trips</a></li>
+
+                    <li><a href="support.html">Support</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <a href="login.html" class="btn-login">Login</a>
+                    <a href="signup.html" class="btn-signup">Sign Up</a>
+                </div>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>My Trips</h1>
+            <p>Manage your bookings and travel plans</p>
+        </div>
+    </section>
+
+    <!-- My Trips Content -->
+    <section class="my-trips-section">
+        <div class="container">
+            <div class="trips-tabs">
+                <button class="trip-tab active" onclick="showTrips('upcoming')">Upcoming Trips</button>
+                <button class="trip-tab" onclick="showTrips('past')">Past Trips</button>
+                <button class="trip-tab" onclick="showTrips('cancelled')">Cancelled</button>
+            </div>
+
+            <!-- Upcoming Trips -->
+            <div class="trips-list active" id="upcoming-trips">
+                <!-- Trips will be loaded dynamically -->
+            </div>
+
+            <!-- Past Trips -->
+            <div class="trips-list" id="past-trips">
+                <!-- Trips will be loaded dynamically -->
+            </div>
+
+            <!-- Cancelled Trips -->
+            <div class="trips-list" id="cancelled-trips">
+                <div class="empty-state">
+                    <i class="fas fa-ban"></i>
+                    <h3>No Cancelled Trips</h3>
+                    <p>You don't have any cancelled trips yet.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>TravelPlanner</h3>
+                    <p>Your trusted partner for memorable travel experiences.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="holidays.html">Holiday Packages</a></li>
+                        <li><a href="flights.html">Flights</a></li>
+                        <li><a href="hotels.html">Hotels</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="support.html">Help Center</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> +91 1800-123-4567</li>
+                        <li><i class="fas fa-envelope"></i> support@travelplanner.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 TravelPlanner. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/my-trips.js"></script>
+</body>
+
+</html>

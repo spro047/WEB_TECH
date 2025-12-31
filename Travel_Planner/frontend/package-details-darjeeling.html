@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Darjeeling Delight - Package Details | TravelPlanner</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/package-details.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo"><i class="fas fa-plane"></i><span>TravelPlanner</span></div>
+                <ul class="nav-menu">
+
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="holidays.html">Holidays</a></li>
+                    <li><a href="trip-builder.html">Trip Builder</a></li>
+                    <li><a href="my-trips.html">My Trips</a></li>
+
+                    <li><a href="support.html">Support</a></li>
+                </ul>
+                <div class="nav-actions"><a href="login.html" class="btn-login">Login</a><a href="signup.html"
+                        class="btn-signup">Sign Up</a></div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="package-header"
+        style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=1200') center/cover;">
+        <div class="container">
+            <div class="breadcrumb"><a href="index.html">Home</a> / <a href="holidays.html">Holidays</a> /
+                <span>Darjeeling Delight</span>
+            </div>
+            <h1>Darjeeling Delight</h1>
+            <div class="package-meta">
+                <span><i class="fas fa-clock"></i> 3 Days / 2 Nights</span>
+                <span><i class="fas fa-map-marker-alt"></i> Darjeeling, WB</span>
+                <span><i class="fas fa-star"></i> 4.4 (120 Reviews)</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="gallery-section">
+        <div class="container">
+            <div class="gallery-main">
+                <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800" class="gallery-image active">
+                <img src="https://images.unsplash.com/photo-1544634220-42468ec4cc9c?w=800" class="gallery-image">
+                <img src="https://images.unsplash.com/photo-1587595431973-160d0d94add1?w=800" class="gallery-image">
+                <button class="gallery-nav prev" onclick="prevGalleryImage()"><i
+                        class="fas fa-chevron-left"></i></button>
+                <button class="gallery-nav next" onclick="nextGalleryImage()"><i
+                        class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <section class="package-content-section">
+        <div class="container">
+            <div class="content-wrapper">
+                <div class="main-content">
+                    <div class="content-block">
+                        <h2>Overview</h2>
+                        <p>Wake up to the golden views of Kanchenjunga and breathe in the aroma of world-famous
+                            Darjeeling tea. A short but sweet escape to the Queen of Hills.</p>
+                    </div>
+                    <div class="content-block">
+                        <h2>Day-wise Itinerary</h2>
+                        <div class="itinerary">
+                            <div class="itinerary-item active">
+                                <div class="itinerary-header"><span class="day-number">Day 1</span>
+                                    <h3>Arrival</h3>
+                                </div>
+                                <div class="itinerary-content">
+                                    <p>Arrival at Bagdogra/NJP. Transfer to Darjeeling.</p>
+                                </div>
+                            </div>
+                            <div class="itinerary-item">
+                                <div class="itinerary-header"><span class="day-number">Day 2</span>
+                                    <h3>Darjeeling Sightseeing</h3>
+                                </div>
+                                <div class="itinerary-content">
+                                    <p>Early morning Tiger Hill. Visit Batasia Loop, Ghoom Monastery.</p>
+                                </div>
+                            </div>
+                            <div class="itinerary-item">
+                                <div class="itinerary-header"><span class="day-number">Day 3</span>
+                                    <h3>Departure</h3>
+                                </div>
+                                <div class="itinerary-content">
+                                    <p>Transfer to Airport/Station.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="booking-sidebar">
+                    <div class="booking-card">
+                        <div class="price-section">
+                            <span class="price-label">Starting from</span>
+                            <span class="price">₹12,999</span>
+                            <span class="price-per">per person</span>
+                        </div>
+                        <div class="booking-form">
+                            <div class="form-group">
+                                <label>Travel Date</label>
+                                <input type="date" id="booking-date">
+                            </div>
+                            <div class="form-group">
+                                <label>Number of Travelers</label>
+                                <select id="booking-travelers">
+                                    <option>1 Traveler</option>
+                                    <option>2 Travelers</option>
+                                    <option>3 Travelers</option>
+                                    <option>4 Travelers</option>
+                                </select>
+                            </div>
+                            <div class="total-price">
+                                <span>Total Price</span>
+                                <span class="total-amount">₹12,999</span>
+                            </div>
+                            <a href="javascript:void(0)" onclick="handlePackageBooking('Darjeeling Delight', 12999, 3)"
+                                class="btn-book-now">Book
+                                Now</a>
+                            <a href="javascript:void(0)" onclick="customizePackage('darjeeling')"
+                                class="btn-customize">Customize Trip</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 TravelPlanner</p>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+    <script>
+        let currentImageIndex = 0; const images = document.querySelectorAll('.gallery-image');
+        function nextGalleryImage() { images[currentImageIndex].classList.remove('active'); currentImageIndex = (currentImageIndex + 1) % images.length; images[currentImageIndex].classList.add('active'); }
+        function prevGalleryImage() { images[currentImageIndex].classList.remove('active'); currentImageIndex = (currentImageIndex - 1 + images.length) % images.length; images[currentImageIndex].classList.add('active'); }
+        document.querySelectorAll('.itinerary-header').forEach(header => header.addEventListener('click', () => header.parentElement.classList.toggle('active')));
+    </script>
+</body>
+
+</html>

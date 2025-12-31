@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - TravelPlanner</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/auth.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <i class="fas fa-plane"></i>
+                    <span>TravelPlanner</span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="holidays.html">Holidays</a></li>
+
+                    <li><a href="trip-builder.html">Trip Builder</a></li>
+                    <li><a href="my-trips.html">My Trips</a></li>
+
+                    <li><a href="support.html">Support</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <a href="login.html" class="btn-login active">Login</a>
+                    <a href="signup.html" class="btn-signup">Sign Up</a>
+                </div>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Login Section -->
+    <section class="auth-section">
+        <div class="container">
+            <div class="auth-container">
+                <div class="auth-card">
+                    <div class="auth-header">
+                        <h2>Welcome Back!</h2>
+                        <p>Login to continue your travel journey</p>
+                    </div>
+                    <form class="auth-form" onsubmit="event.preventDefault(); handleLogin();">
+                        <div class="form-group">
+                            <label><i class="fas fa-envelope"></i> Email Address</label>
+                            <input type="email" id="login-email" placeholder="Enter your email" required>
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fas fa-lock"></i> Password</label>
+                            <input type="password" id="login-password" placeholder="Enter your password" required>
+                            <a href="#" class="forgot-password">Forgot Password?</a>
+                        </div>
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="remember-me">
+                            <label for="remember-me">Remember me</label>
+                        </div>
+                        <button type="submit" class="btn-auth">Login</button>
+                        <div class="auth-divider">
+                            <span>OR</span>
+                        </div>
+                        <button type="button" class="btn-otp" onclick="showOTPLogin()">
+                            <i class="fas fa-mobile-alt"></i> Login with OTP
+                        </button>
+                        <div class="auth-footer">
+                            <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
+                        </div>
+                    </form>
+
+                    <!-- OTP Login Form -->
+                    <form class="auth-form hidden" id="otp-form" onsubmit="event.preventDefault(); handleOTPLogin();">
+                        <div class="form-group">
+                            <label><i class="fas fa-mobile-alt"></i> Phone Number</label>
+                            <input type="tel" id="otp-phone" placeholder="Enter your phone number" required>
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fas fa-key"></i> OTP</label>
+                            <input type="text" id="otp-code" placeholder="Enter OTP" maxlength="6" required>
+                            <button type="button" class="btn-resend-otp" onclick="resendOTP()">Resend OTP</button>
+                        </div>
+                        <button type="submit" class="btn-auth">Verify & Login</button>
+                        <button type="button" class="btn-back-email" onclick="showEmailLogin()">
+                            <i class="fas fa-arrow-left"></i> Back to Email Login
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>TravelPlanner</h3>
+                    <p>Your trusted partner for memorable travel experiences.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="holidays.html">Holiday Packages</a></li>
+                        <li><a href="flights.html">Flights</a></li>
+                        <li><a href="hotels.html">Hotels</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="support.html">Help Center</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> +91 1800-123-4567</li>
+                        <li><i class="fas fa-envelope"></i> support@travelplanner.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 TravelPlanner. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        function showOTPLogin() {
+            document.querySelector('.auth-form:not(#otp-form)').classList.add('hidden');
+            document.getElementById('otp-form').classList.remove('hidden');
+        }
+
+        function showEmailLogin() {
+            document.getElementById('otp-form').classList.add('hidden');
+            document.querySelector('.auth-form:not(#otp-form)').classList.remove('hidden');
+        }
+
+        async function handleLogin() {
+            const email = document.getElementById('login-email').value;
+            const password = document.getElementById('login-password').value;
+
+            try {
+                const response = await fetch('http://localhost:5000/api/auth/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ email, password })
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    // Store login state and user data
+                    localStorage.setItem('isLoggedIn', 'true');
+                    localStorage.setItem('userData', JSON.stringify(data));
+                    localStorage.setItem('token', data.token);
+
+                    alert('Login successful! Redirecting...');
+                    window.location.href = 'index.html';
+                } else {
+                    alert(data.message || 'Login failed. Please check your credentials.');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('An error occurred. Please make sure the backend server is running.');
+            }
+        }
+
+        function handleOTPLogin() {
+            const phone = document.getElementById('otp-phone').value;
+            const otp = document.getElementById('otp-code').value;
+
+            // Store login state and user data
+            localStorage.setItem('isLoggedIn', 'true');
+            const userData = {
+                name: 'User',
+                email: '',
+                phone: phone
+            };
+            localStorage.setItem('userData', JSON.stringify(userData));
+
+            // Simulate OTP verification
+            alert('OTP verified! Login successful.');
+            window.location.href = 'my-trips.html';
+        }
+
+        function resendOTP() {
+            alert('OTP has been sent to your phone number.');
+        }
+    </script>
+</body>
+
+</html>

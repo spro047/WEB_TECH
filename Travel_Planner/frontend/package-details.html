@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goa Beach Paradise - Package Details | TravelPlanner</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/package-details.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="css/map.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <i class="fas fa-plane"></i>
+                    <span>TravelPlanner</span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="holidays.html">Holidays</a></li>
+
+                    <li><a href="trip-builder.html">Trip Builder</a></li>
+                    <li><a href="my-trips.html">My Trips</a></li>
+
+                    <li><a href="support.html">Support</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <a href="login.html" class="btn-login">Login</a>
+                    <a href="signup.html" class="btn-signup">Sign Up</a>
+                </div>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Package Header -->
+    <section class="package-header">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html">Home</a> / <a href="holidays.html">Holidays</a> / <span>Goa Beach Paradise</span>
+            </div>
+            <h1>Goa Beach Paradise</h1>
+            <div class="package-meta">
+                <span><i class="fas fa-clock"></i> 4 Days / 3 Nights</span>
+                <span><i class="fas fa-map-marker-alt"></i> Goa, India</span>
+                <span><i class="fas fa-star"></i> 4.5 (234 Reviews)</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Image Gallery -->
+    <section class="gallery-section">
+        <div class="container">
+            <div class="gallery-main">
+                <img src="images/goa.png" alt="Goa Beach" class="gallery-image active">
+                <img src="https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=800" alt="Goa Beach 2"
+                    class="gallery-image">
+                <img src="https://images.unsplash.com/photo-1544237256-bd4644da6058?w=800" alt="Goa Beach 3"
+                    class="gallery-image">
+                <button class="gallery-nav prev" onclick="prevGalleryImage()"><i
+                        class="fas fa-chevron-left"></i></button>
+                <button class="gallery-nav next" onclick="nextGalleryImage()"><i
+                        class="fas fa-chevron-right"></i></button>
+            </div>
+            <div class="gallery-thumbnails">
+                <img src="images/goa.png" alt="Thumbnail 1" onclick="showGalleryImage(0)" class="active">
+                <img src="https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=800" alt="Thumbnail 2"
+                    onclick="showGalleryImage(1)">
+                <img src="https://images.unsplash.com/photo-1544237256-bd4644da6058?w=800" alt="Thumbnail 3"
+                    onclick="showGalleryImage(2)">
+            </div>
+        </div>
+    </section>
+
+    <!-- Package Content -->
+    <section class="package-content-section">
+        <div class="container">
+            <div class="content-wrapper">
+                <div class="main-content">
+                    <!-- Overview -->
+                    <div class="content-block">
+                        <h2>Overview</h2>
+                        <p>Experience the perfect blend of sun, sand, and sea with our Goa Beach Paradise package. This
+                            4-day, 3-night getaway takes you to the most beautiful beaches in Goa, where you can relax,
+                            unwind, and create unforgettable memories.</p>
+                        <p>From pristine beaches to vibrant nightlife, from water sports to delicious seafood, Goa has
+                            it all. Our carefully curated package ensures you get the best of what this coastal paradise
+                            has to offer.</p>
+                    </div>
+
+                    <!-- Itinerary -->
+                    <div class="content-block">
+                        <h2>Day-wise Itinerary</h2>
+                        <div class="itinerary">
+                            <div class="itinerary-item active">
+                                <div class="itinerary-header">
+                                    <span class="day-number">Day 1</span>
+                                    <h3>Arrival in Goa - Beach Hopping</h3>
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                                <div class="itinerary-content">
+                                    <p><strong>Morning:</strong> Arrive at Goa airport/railway station. Transfer to
+                                        hotel. Check-in and freshen up.</p>
+                                    <p><strong>Afternoon:</strong> Visit Calangute Beach - known as the "Queen of
+                                        Beaches". Enjoy water sports activities.</p>
+                                    <p><strong>Evening:</strong> Explore Baga Beach and enjoy the vibrant nightlife at
+                                        Tito's Lane.</p>
+                                    <p><strong>Meals:</strong> Breakfast at hotel</p>
+                                </div>
+                            </div>
+
+                            <div class="itinerary-item">
+                                <div class="itinerary-header">
+                                    <span class="day-number">Day 2</span>
+                                    <h3>North Goa Exploration</h3>
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                                <div class="itinerary-content">
+                                    <p><strong>Morning:</strong> Visit Fort Aguada and enjoy panoramic views of the
+                                        Arabian Sea.</p>
+                                    <p><strong>Afternoon:</strong> Explore Anjuna Beach and visit the famous Anjuna Flea
+                                        Market.</p>
+                                    <p><strong>Evening:</strong> Sunset at Vagator Beach followed by dinner at a
+                                        beachside restaurant.</p>
+                                    <p><strong>Meals:</strong> Breakfast at hotel, Dinner</p>
+                                </div>
+                            </div>
+
+                            <div class="itinerary-item">
+                                <div class="itinerary-header">
+                                    <span class="day-number">Day 3</span>
+                                    <h3>South Goa & Spice Plantation</h3>
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                                <div class="itinerary-content">
+                                    <p><strong>Morning:</strong> Visit a spice plantation and enjoy a traditional Goan
+                                        lunch.</p>
+                                    <p><strong>Afternoon:</strong> Explore Colva Beach and visit the famous Our Lady of
+                                        Mercy Church.</p>
+                                    <p><strong>Evening:</strong> Leisure time at the beach or optional cruise on Mandovi
+                                        River.</p>
+                                    <p><strong>Meals:</strong> Breakfast at hotel, Lunch</p>
+                                </div>
+                            </div>
+
+                            <div class="itinerary-item">
+                                <div class="itinerary-header">
+                                    <span class="day-number">Day 4</span>
+                                    <h3>Departure</h3>
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                                <div class="itinerary-content">
+                                    <p><strong>Morning:</strong> Check-out from hotel. Last-minute shopping at local
+                                        markets.</p>
+                                    <p><strong>Afternoon:</strong> Transfer to airport/railway station for departure.
+                                    </p>
+                                    <p><strong>Meals:</strong> Breakfast at hotel</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Inclusions & Exclusions -->
+                    <div class="content-block">
+                        <div class="inclusions-exclusions">
+                            <div class="inclusions">
+                                <h3><i class="fas fa-check-circle"></i> Inclusions</h3>
+                                <ul>
+                                    <li><i class="fas fa-check"></i> 3 Nights accommodation in 3-star hotel</li>
+                                    <li><i class="fas fa-check"></i> Daily breakfast</li>
+                                    <li><i class="fas fa-check"></i> Airport/Station transfers</li>
+                                    <li><i class="fas fa-check"></i> Sightseeing as per itinerary</li>
+                                    <li><i class="fas fa-check"></i> All applicable taxes</li>
+                                    <li><i class="fas fa-check"></i> Travel assistance</li>
+                                </ul>
+                            </div>
+                            <div class="exclusions">
+                                <h3><i class="fas fa-times-circle"></i> Exclusions</h3>
+                                <ul>
+                                    <li><i class="fas fa-times"></i> Airfare/Train fare</li>
+                                    <li><i class="fas fa-times"></i> Lunch & Dinner (except mentioned)</li>
+                                    <li><i class="fas fa-times"></i> Personal expenses</li>
+                                    <li><i class="fas fa-times"></i> Water sports activities</li>
+                                    <li><i class="fas fa-times"></i> Optional tours</li>
+                                    <li><i class="fas fa-times"></i> Travel insurance</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <!-- Cancellation Policy -->
+                    <div class="content-block">
+                        <h2>Cancellation Policy</h2>
+                        <div class="policy-content">
+                            <p><strong>Free cancellation:</strong> Up to 7 days before travel</p>
+                            <p><strong>50% refund:</strong> 3-7 days before travel</p>
+                            <p><strong>No refund:</strong> Less than 3 days before travel</p>
+                            <p><strong>Note:</strong> Cancellation charges may apply as per hotel policy. Please check
+                                with our support team for detailed cancellation terms.</p>
+                        </div>
+                    </div>
+
+                    <!-- Reviews -->
+                    <div class="content-block">
+                        <h2>Reviews & Ratings</h2>
+                        <div class="reviews-summary">
+                            <div class="rating-breakdown">
+                                <div class="overall-rating">
+                                    <span class="rating-number">4.5</span>
+                                    <div class="rating-stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                    <p>Based on 234 reviews</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="reviews-list">
+                            <div class="review-item">
+                                <div class="review-header">
+                                    <img src="https://ui-avatars.com/api/?name=Rahul+Sharma&background=random"
+                                        alt="User">
+                                    <div>
+                                        <h4>Rahul Sharma</h4>
+                                        <div class="review-rating">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                    </div>
+                                    <span class="review-date">2 weeks ago</span>
+                                </div>
+                                <p class="review-text">Amazing experience! The beaches were beautiful and the hotel was
+                                    great. Highly recommended for a relaxing vacation.</p>
+                            </div>
+                            <div class="review-item">
+                                <div class="review-header">
+                                    <img src="https://ui-avatars.com/api/?name=Priya+Patel&background=random"
+                                        alt="User">
+                                    <div>
+                                        <h4>Priya Patel</h4>
+                                        <div class="review-rating">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                        </div>
+                                    </div>
+                                    <span class="review-date">1 month ago</span>
+                                </div>
+                                <p class="review-text">Good package overall. The itinerary was well-planned and the
+                                    staff was helpful. Would book again!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Booking Sidebar -->
+                <div class="booking-sidebar">
+                    <div class="booking-card">
+                        <div class="price-section">
+                            <span class="price-label">Starting from</span>
+                            <span class="price">₹15,999</span>
+                            <span class="price-per">per person</span>
+                        </div>
+                        <div class="booking-form">
+                            <div class="form-group">
+                                <label>Travel Date</label>
+                                <input type="date" id="booking-date">
+                            </div>
+                            <div class="form-group">
+                                <label>Number of Travelers</label>
+                                <select id="booking-travelers">
+                                    <option>1 Traveler</option>
+                                    <option>2 Travelers</option>
+                                    <option>3 Travelers</option>
+                                    <option>4 Travelers</option>
+                                    <option>5+ Travelers</option>
+                                </select>
+                            </div>
+                            <div class="total-price">
+                                <span>Total Price</span>
+                                <span class="total-amount">₹31,998</span>
+                            </div>
+                            <a href="javascript:void(0)" onclick="handlePackageBooking('Goa Beach Paradise', 15999, 4)"
+                                class="btn-book-now">Book Now</a>
+                            <a href="trip-builder.html" class="btn-customize">Customize Trip</a>
+                        </div>
+                        <div class="booking-features">
+                            <p><i class="fas fa-shield-alt"></i> Secure Booking</p>
+                            <p><i class="fas fa-headset"></i> 24/7 Support</p>
+                            <p><i class="fas fa-undo"></i> Easy Cancellation</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>TravelPlanner</h3>
+                    <p>Your trusted partner for memorable travel experiences.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="holidays.html">Holiday Packages</a></li>
+                        <li><a href="flights.html">Flights</a></li>
+                        <li><a href="hotels.html">Hotels</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="support.html">Help Center</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> +91 1800-123-4567</li>
+                        <li><i class="fas fa-envelope"></i> support@travelplanner.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 TravelPlanner. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/map-utils.js"></script>
+    </script>
+    <script src="js/package-details.js"></script>
+</body>
+
+</html>

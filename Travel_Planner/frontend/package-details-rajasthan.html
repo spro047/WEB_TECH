@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rajasthan Royal Tour - Package Details | TravelPlanner</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/package-details.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo"><i class="fas fa-plane"></i><span>TravelPlanner</span></div>
+                <ul class="nav-menu">
+
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="holidays.html">Holidays</a></li>
+                    <li><a href="trip-builder.html">Trip Builder</a></li>
+                    <li><a href="my-trips.html">My Trips</a></li>
+
+                    <li><a href="support.html">Support</a></li>
+                </ul>
+                <div class="nav-actions"><a href="login.html" class="btn-login">Login</a><a href="signup.html"
+                        class="btn-signup">Sign Up</a></div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="package-header"
+        style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/rajasthan.png') center/cover;">
+        <div class="container">
+            <div class="breadcrumb"><a href="index.html">Home</a> / <a href="holidays.html">Holidays</a> /
+                <span>Rajasthan Royal Tour</span>
+            </div>
+            <h1>Rajasthan Royal Tour</h1>
+            <div class="package-meta">
+                <span><i class="fas fa-clock"></i> 7 Days / 6 Nights</span>
+                <span><i class="fas fa-map-marker-alt"></i> Rajasthan, India</span>
+                <span><i class="fas fa-star"></i> 4.6 (156 Reviews)</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="gallery-section">
+        <div class="container">
+            <div class="gallery-main">
+                <img src="images/rajasthan.png" class="gallery-image active">
+                <img src="https://images.unsplash.com/photo-1599661046289-e31897846e41?w=800" class="gallery-image">
+                <img src="https://images.unsplash.com/photo-1477587458883-47145ed94245?w=800" class="gallery-image">
+                <button class="gallery-nav prev" onclick="prevGalleryImage()"><i
+                        class="fas fa-chevron-left"></i></button>
+                <button class="gallery-nav next" onclick="nextGalleryImage()"><i
+                        class="fas fa-chevron-right"></i></button>
+            </div>
+            <div class="gallery-thumbnails">
+                <img src="images/rajasthan.png" onclick="showGalleryImage(0)" class="active">
+                <img src="https://images.unsplash.com/photo-1599661046289-e31897846e41?w=800"
+                    onclick="showGalleryImage(1)">
+                <img src="https://images.unsplash.com/photo-1477587458883-47145ed94245?w=800"
+                    onclick="showGalleryImage(2)">
+            </div>
+        </div>
+    </section>
+
+    <section class="package-content-section">
+        <div class="container">
+            <div class="content-wrapper">
+                <div class="main-content">
+                    <div class="content-block">
+                        <h2>Overview</h2>
+                        <p>Experience the grandeur of Rajasthan with visits to majestic forts, palaces, and vibrant
+                            markets. A journey through history and culture awaits you in the Land of Kings.</p>
+                    </div>
+                    <div class="content-block">
+                        <h2>Day-wise Itinerary</h2>
+                        <div class="itinerary">
+                            <div class="itinerary-item active">
+                                <div class="itinerary-header"><span class="day-number">Day 1</span>
+                                    <h3>Jaipur Arrival</h3>
+                                </div>
+                                <div class="itinerary-content">
+                                    <p>Arrival at Jaipur. Transfer to hotel.</p>
+                                </div>
+                            </div>
+                            <div class="itinerary-item">
+                                <div class="itinerary-header"><span class="day-number">Day 2</span>
+                                    <h3>Jaipur Sightseeing</h3>
+                                </div>
+                                <div class="itinerary-content">
+                                    <p>Visit Amber Fort, City Palace, Hawa Mahal.</p>
+                                </div>
+                            </div>
+                            <div class="itinerary-item">
+                                <div class="itinerary-header"><span class="day-number">Day 3</span>
+                                    <h3>Jaipur to Jodhpur</h3>
+                                </div>
+                                <div class="itinerary-content">
+                                    <p>Drive to Jodhpur via Pushkar.</p>
+                                </div>
+                            </div>
+                            <div class="itinerary-item">
+                                <div class="itinerary-header"><span class="day-number">Day 4</span>
+                                    <h3>Jodhpur Sightseeing</h3>
+                                </div>
+                                <div class="itinerary-content">
+                                    <p>Visit Mehrangarh Fort, Jaswant Thada.</p>
+                                </div>
+                            </div>
+                            <div class="itinerary-item">
+                                <div class="itinerary-header"><span class="day-number">Day 5</span>
+                                    <h3>Jodhpur to Udaipur</h3>
+                                </div>
+                                <div class="itinerary-content">
+                                    <p>Drive to Udaipur via Ranakpur Jain Temples.</p>
+                                </div>
+                            </div>
+                            <div class="itinerary-item">
+                                <div class="itinerary-header"><span class="day-number">Day 6</span>
+                                    <h3>Udaipur Sightseeing</h3>
+                                </div>
+                                <div class="itinerary-content">
+                                    <p>Visit City Palace, Lake Pichola Boat Ride.</p>
+                                </div>
+                            </div>
+                            <div class="itinerary-item">
+                                <div class="itinerary-header"><span class="day-number">Day 7</span>
+                                    <h3>Departure</h3>
+                                </div>
+                                <div class="itinerary-content">
+                                    <p>Transfer to Udaipur Airport.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="booking-sidebar">
+                    <div class="booking-card">
+                        <div class="price-section">
+                            <span class="price-label">Starting from</span>
+                            <span class="price">₹35,999</span>
+                            <span class="price-per">per person</span>
+                        </div>
+                        <div class="booking-form">
+                            <div class="form-group">
+                                <label>Travel Date</label>
+                                <input type="date" id="booking-date">
+                            </div>
+                            <div class="form-group">
+                                <label>Number of Travelers</label>
+                                <select id="booking-travelers">
+                                    <option>1 Traveler</option>
+                                    <option>2 Travelers</option>
+                                    <option>3 Travelers</option>
+                                    <option>4 Travelers</option>
+                                </select>
+                            </div>
+                            <div class="total-price">
+                                <span>Total Price</span>
+                                <span class="total-amount">₹35,999</span>
+                            </div>
+                            <a href="javascript:void(0)"
+                                onclick="handlePackageBooking('Rajasthan Royal Tour', 35999, 7)"
+                                class="btn-book-now">Book Now</a>
+                            <a href="javascript:void(0)" onclick="customizePackage('rajasthan')"
+                                class="btn-customize">Customize Trip</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 TravelPlanner</p>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+    <script>
+        let currentImageIndex = 0; const images = document.querySelectorAll('.gallery-image'); const thumbnails = document.querySelectorAll('.gallery-thumbnails img');
+        function showGalleryImage(index) { images.forEach(img => img.classList.remove('active')); thumbnails.forEach(thumb => thumb.classList.remove('active')); images[index].classList.add('active'); thumbnails[index].classList.add('active'); currentImageIndex = index; }
+        function nextGalleryImage() { showGalleryImage((currentImageIndex + 1) % images.length); }
+        function prevGalleryImage() { showGalleryImage((currentImageIndex - 1 + images.length) % images.length); }
+        document.querySelectorAll('.itinerary-header').forEach(header => header.addEventListener('click', () => header.parentElement.classList.toggle('active')));
+    </script>
+</body>
+
+</html>

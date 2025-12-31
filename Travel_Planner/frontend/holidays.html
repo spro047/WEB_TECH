@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Holiday Packages - TravelPlanner</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/holidays.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <i class="fas fa-plane"></i>
+                    <span>TravelPlanner</span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="holidays.html" class="active">Holidays</a></li>
+
+                    <li><a href="trip-builder.html">Trip Builder</a></li>
+                    <li><a href="my-trips.html">My Trips</a></li>
+
+                    <li><a href="support.html">Support</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <a href="login.html" class="btn-login">Login</a>
+                    <a href="signup.html" class="btn-signup">Sign Up</a>
+                </div>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Holiday Packages</h1>
+            <p>Discover amazing destinations with our curated holiday packages</p>
+        </div>
+    </section>
+
+    <!-- Filters and Sorting -->
+    <section class="filters-section">
+        <div class="container">
+            <div class="filters-wrapper">
+                <div class="filters">
+                    <h3><i class="fas fa-filter"></i> Filters</h3>
+
+                    <div class="filter-group">
+                        <label>Budget Range</label>
+                        <select id="budget-filter" onchange="filterPackages()">
+                            <option value="all">All Budgets</option>
+                            <option value="low">Under ₹20,000</option>
+                            <option value="medium">₹20,000 - ₹50,000</option>
+                            <option value="high">₹50,000 - ₹1,00,000</option>
+                            <option value="premium">Above ₹1,00,000</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label>Duration</label>
+                        <select id="duration-filter" onchange="filterPackages()">
+                            <option value="all">All Durations</option>
+                            <option value="short">3-5 Days</option>
+                            <option value="medium">6-9 Days</option>
+                            <option value="long">10+ Days</option>
+                        </select>
+                    </div>
+
+
+
+                    <button class="btn-clear-filters" onclick="clearFilters()">
+                        <i class="fas fa-times"></i> Clear Filters
+                    </button>
+                </div>
+
+                <div class="packages-section">
+                    <div class="sorting-bar">
+                        <div class="results-count">
+                            <span id="results-count">24</span> packages found
+                        </div>
+                        <div class="sort-options">
+                            <label>Sort by:</label>
+                            <select id="sort-select" onchange="sortPackages(this.value)">
+                                <option value="popularity">Popularity</option>
+                                <option value="price-low">Price: Low to High</option>
+                                <option value="price-high">Price: High to Low</option>
+                                <option value="rating">Rating</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="packages-grid">
+                        <div class="package-card" data-budget="medium" data-duration="short"
+                            data-type="beach spiritual party" data-traveler="family couple group solo">
+                            <div class="package-image">
+                                <img src="images/goa.png" alt="Goa Beach Package">
+                                <span class="package-badge">Best Seller</span>
+                                <div class="package-rating">
+                                    <i class="fas fa-star"></i>
+                                    <span>4.5</span>
+                                </div>
+                            </div>
+                            <div class="package-content">
+                                <h3>Goa Beach Paradise</h3>
+                                <p class="package-duration"><i class="fas fa-clock"></i> 4 Days / 3 Nights</p>
+                                <div class="package-highlights">
+                                    <span><i class="fas fa-hotel"></i> 3 Star Hotel</span>
+                                    <span><i class="fas fa-utensils"></i> Breakfast</span>
+                                    <span><i class="fas fa-car"></i> Transfer</span>
+                                </div>
+                                <div class="package-price">
+                                    <span class="price">₹15,999</span>
+                                    <span class="price-label">per person</span>
+                                </div>
+                                <a href="package-details.html" class="btn-view-details">View Details</a>
+                            </div>
+                        </div>
+
+                        <div class="package-card" data-budget="medium" data-duration="medium"
+                            data-type="hill adventure spiritual" data-traveler="family couple group solo">
+                            <div class="package-image">
+                                <img src="images/manali.png" alt="Manali Adventure">
+                                <span class="package-badge">Adventure</span>
+                                <div class="package-rating">
+                                    <i class="fas fa-star"></i>
+                                    <span>4.7</span>
+                                </div>
+                            </div>
+                            <div class="package-content">
+                                <h3>Manali Adventure Trip</h3>
+                                <p class="package-duration"><i class="fas fa-clock"></i> 5 Days / 4 Nights</p>
+                                <div class="package-highlights">
+                                    <span><i class="fas fa-hotel"></i> 4 Star Hotel</span>
+                                    <span><i class="fas fa-utensils"></i> All Meals</span>
+                                    <span><i class="fas fa-skiing"></i> Activities</span>
+                                </div>
+                                <div class="package-price">
+                                    <span class="price">₹22,999</span>
+                                    <span class="price-label">per person</span>
+                                </div>
+                                <a href="package-details-manali.html" class="btn-view-details">View Details</a>
+                            </div>
+                        </div>
+
+                        <div class="package-card" data-budget="high" data-duration="medium"
+                            data-type="beach heritage spiritual" data-traveler="family couple group">
+                            <div class="package-image">
+                                <img src="images/kerala.png" alt="Kerala Backwaters">
+                                <span class="package-badge">Family</span>
+                                <div class="package-rating">
+                                    <i class="fas fa-star"></i>
+                                    <span>4.8</span>
+                                </div>
+                            </div>
+                            <div class="package-content">
+                                <h3>Kerala Backwaters</h3>
+                                <p class="package-duration"><i class="fas fa-clock"></i> 6 Days / 5 Nights</p>
+                                <div class="package-highlights">
+                                    <span><i class="fas fa-hotel"></i> 3 Star Hotel</span>
+                                    <span><i class="fas fa-utensils"></i> Breakfast</span>
+                                    <span><i class="fas fa-ship"></i> Houseboat</span>
+                                </div>
+                                <div class="package-price">
+                                    <span class="price">₹28,999</span>
+                                    <span class="price-label">per person</span>
+                                </div>
+                                <a href="package-details-kerala.html" class="btn-view-details">View Details</a>
+                            </div>
+                        </div>
+
+                        <div class="package-card" data-budget="high" data-duration="long" data-type="heritage spiritual"
+                            data-traveler="family group couple">
+                            <div class="package-image">
+                                <img src="images/rajasthan.png" alt="Rajasthan Royal">
+                                <span class="package-badge">Heritage</span>
+                                <div class="package-rating">
+                                    <i class="fas fa-star"></i>
+                                    <span>4.6</span>
+                                </div>
+                            </div>
+                            <div class="package-content">
+                                <h3>Rajasthan Royal Tour</h3>
+                                <p class="package-duration"><i class="fas fa-clock"></i> 7 Days / 6 Nights</p>
+                                <div class="package-highlights">
+                                    <span><i class="fas fa-hotel"></i> 4 Star Hotel</span>
+                                    <span><i class="fas fa-utensils"></i> All Meals</span>
+                                    <span><i class="fas fa-car"></i> AC Transport</span>
+                                </div>
+                                <div class="package-price">
+                                    <span class="price">₹35,999</span>
+                                    <span class="price-label">per person</span>
+                                </div>
+                                <a href="package-details-rajasthan.html" class="btn-view-details">View Details</a>
+                            </div>
+                        </div>
+
+                        <div class="package-card" data-budget="low" data-duration="short" data-type="hill spiritual"
+                            data-traveler="couple solo family">
+                            <div class="package-image">
+                                <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=600"
+                                    alt="Darjeeling">
+                                <span class="package-badge">Hill Station</span>
+                                <div class="package-rating">
+                                    <i class="fas fa-star"></i>
+                                    <span>4.4</span>
+                                </div>
+                            </div>
+                            <div class="package-content">
+                                <h3>Darjeeling Delight</h3>
+                                <p class="package-duration"><i class="fas fa-clock"></i> 3 Days / 2 Nights</p>
+                                <div class="package-highlights">
+                                    <span><i class="fas fa-hotel"></i> 3 Star Hotel</span>
+                                    <span><i class="fas fa-utensils"></i> Breakfast</span>
+                                    <span><i class="fas fa-mountain"></i> Sightseeing</span>
+                                </div>
+                                <div class="package-price">
+                                    <span class="price">₹12,999</span>
+                                    <span class="price-label">per person</span>
+                                </div>
+                                <a href="package-details-darjeeling.html" class="btn-view-details">View Details</a>
+                            </div>
+                        </div>
+
+                        <div class="package-card" data-budget="low" data-duration="short" data-type="hill adventure"
+                            data-traveler="family couple group solo">
+                            <div class="package-image">
+                                <img src="https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=600"
+                                    alt="Shimla">
+                                <span class="package-badge">Family</span>
+                                <div class="package-rating">
+                                    <i class="fas fa-star"></i>
+                                    <span>4.5</span>
+                                </div>
+                            </div>
+                            <div class="package-content">
+                                <h3>Shimla Summer Escape</h3>
+                                <p class="package-duration"><i class="fas fa-clock"></i> 4 Days / 3 Nights</p>
+                                <div class="package-highlights">
+                                    <span><i class="fas fa-hotel"></i> 3 Star Hotel</span>
+                                    <span><i class="fas fa-utensils"></i> Breakfast</span>
+                                    <span><i class="fas fa-car"></i> Transfer</span>
+                                </div>
+                                <div class="package-price">
+                                    <span class="price">₹14,999</span>
+                                    <span class="price-label">per person</span>
+                                </div>
+                                <a href="package-details-shimla.html" class="btn-view-details">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>TravelPlanner</h3>
+                    <p>Your trusted partner for memorable travel experiences.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="holidays.html">Holiday Packages</a></li>
+                        <li><a href="flights.html">Flights</a></li>
+                        <li><a href="hotels.html">Hotels</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="support.html">Help Center</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> +91 1800-123-4567</li>
+                        <li><i class="fas fa-envelope"></i> support@travelplanner.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 TravelPlanner. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        function clearFilters() {
+            document.getElementById('budget-filter').value = 'all';
+            document.getElementById('duration-filter').value = 'all';
+            filterPackages();
+        }
+    </script>
+</body>
+
+</html>

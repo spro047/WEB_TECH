@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trip Builder - Customize Your Perfect Trip | TravelPlanner</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/trip-builder.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="css/map.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <i class="fas fa-plane"></i>
+                    <span>TravelPlanner</span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="holidays.html">Holidays</a></li>
+
+                    <li><a href="trip-builder.html" class="active">Trip Builder</a></li>
+                    <li><a href="my-trips.html">My Trips</a></li>
+
+                    <li><a href="support.html">Support</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <a href="login.html" class="btn-login">Login</a>
+                    <a href="signup.html" class="btn-signup">Sign Up</a>
+                </div>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Build Your Custom Trip</h1>
+            <p>Create your perfect holiday by customizing every detail</p>
+        </div>
+    </section>
+
+    <!-- Trip Builder -->
+    <section class="trip-builder-section">
+        <div class="container">
+            <div class="builder-wrapper">
+                <div class="builder-steps">
+                    <div class="step active" data-step="1">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Destination & Dates</h3>
+                            <p>Choose where and when</p>
+                        </div>
+                    </div>
+                    <div class="step" data-step="2">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Accommodation</h3>
+                            <p>Select your hotel</p>
+                        </div>
+                    </div>
+                    <div class="step" data-step="3">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Transport</h3>
+                            <p>Choose travel mode</p>
+                        </div>
+                    </div>
+                    <div class="step" data-step="4">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h3>Activities</h3>
+                            <p>Add experiences</p>
+                        </div>
+                    </div>
+                    <div class="step" data-step="5">
+                        <div class="step-number">5</div>
+                        <div class="step-content">
+                            <h3>Review</h3>
+                            <p>Finalize your trip</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 1: Destination & Dates -->
+                <div class="builder-content active" id="step-1">
+                    <h2>Where do you want to go?</h2>
+                    <div class="form-section">
+                        <div class="form-group">
+                            <label><i class="fas fa-map-marker-alt"></i> From City</label>
+                            <select id="from-city-select">
+                                <option value="">Select City</option>
+                                <optgroup label="India">
+                                    <option value="mumbai">Mumbai</option>
+                                    <option value="delhi">Delhi</option>
+                                    <option value="bangalore">Bangalore</option>
+                                    <option value="kolkata">Kolkata</option>
+                                    <option value="chennai">Chennai</option>
+                                    <option value="hyderabad">Hyderabad</option>
+                                    <option value="pune">Pune</option>
+                                    <option value="ahmedabad">Ahmedabad</option>
+                                    <option value="jaipur">Jaipur</option>
+                                    <option value="goa">Goa</option>
+                                    <option value="manali">Manali</option>
+                                    <option value="kerala">Kerala</option>
+                                    <option value="rajasthan">Rajasthan</option>
+                                    <option value="darjeeling">Darjeeling</option>
+                                    <option value="shimla">Shimla</option>
+                                </optgroup>
+                                <optgroup label="Asia">
+                                    <option value="tokyo">Tokyo, Japan</option>
+                                    <option value="singapore">Singapore</option>
+                                    <option value="bangkok">Bangkok, Thailand</option>
+                                    <option value="hong kong">Hong Kong</option>
+                                    <option value="seoul">Seoul, South Korea</option>
+                                    <option value="beijing">Beijing, China</option>
+                                    <option value="shanghai">Shanghai, China</option>
+                                    <option value="dubai">Dubai, UAE</option>
+                                    <option value="abu dhabi">Abu Dhabi, UAE</option>
+                                    <option value="kuala lumpur">Kuala Lumpur, Malaysia</option>
+                                    <option value="jakarta">Jakarta, Indonesia</option>
+                                    <option value="manila">Manila, Philippines</option>
+                                    <option value="ho chi minh city">Ho Chi Minh City, Vietnam</option>
+                                    <option value="hanoi">Hanoi, Vietnam</option>
+                                    <option value="taipei">Taipei, Taiwan</option>
+                                    <option value="osaka">Osaka, Japan</option>
+                                    <option value="kyoto">Kyoto, Japan</option>
+                                    <option value="istanbul">Istanbul, Turkey</option>
+                                    <option value="tel aviv">Tel Aviv, Israel</option>
+                                    <option value="jerusalem">Jerusalem, Israel</option>
+                                    <option value="riyadh">Riyadh, Saudi Arabia</option>
+                                    <option value="doha">Doha, Qatar</option>
+                                    <option value="kathmandu">Kathmandu, Nepal</option>
+                                    <option value="colombo">Colombo, Sri Lanka</option>
+                                    <option value="dhaka">Dhaka, Bangladesh</option>
+                                    <option value="phuket">Phuket, Thailand</option>
+                                </optgroup>
+                                <optgroup label="Europe">
+                                    <option value="london">London, UK</option>
+                                    <option value="paris">Paris, France</option>
+                                    <option value="rome">Rome, Italy</option>
+                                    <option value="barcelona">Barcelona, Spain</option>
+                                    <option value="madrid">Madrid, Spain</option>
+                                    <option value="amsterdam">Amsterdam, Netherlands</option>
+                                    <option value="berlin">Berlin, Germany</option>
+                                    <option value="munich">Munich, Germany</option>
+                                    <option value="vienna">Vienna, Austria</option>
+                                    <option value="prague">Prague, Czech Republic</option>
+                                    <option value="budapest">Budapest, Hungary</option>
+                                    <option value="warsaw">Warsaw, Poland</option>
+                                    <option value="stockholm">Stockholm, Sweden</option>
+                                    <option value="copenhagen">Copenhagen, Denmark</option>
+                                    <option value="oslo">Oslo, Norway</option>
+                                    <option value="helsinki">Helsinki, Finland</option>
+                                    <option value="dublin">Dublin, Ireland</option>
+                                    <option value="edinburgh">Edinburgh, UK</option>
+                                    <option value="brussels">Brussels, Belgium</option>
+                                    <option value="zurich">Zurich, Switzerland</option>
+                                    <option value="geneva">Geneva, Switzerland</option>
+                                    <option value="milan">Milan, Italy</option>
+                                    <option value="venice">Venice, Italy</option>
+                                    <option value="florence">Florence, Italy</option>
+                                    <option value="athens">Athens, Greece</option>
+                                    <option value="lisbon">Lisbon, Portugal</option>
+                                    <option value="porto">Porto, Portugal</option>
+                                    <option value="moscow">Moscow, Russia</option>
+                                    <option value="saint petersburg">Saint Petersburg, Russia</option>
+                                </optgroup>
+                                <optgroup label="North America">
+                                    <option value="new york">New York, USA</option>
+                                    <option value="los angeles">Los Angeles, USA</option>
+                                    <option value="chicago">Chicago, USA</option>
+                                    <option value="san francisco">San Francisco, USA</option>
+                                    <option value="miami">Miami, USA</option>
+                                    <option value="las vegas">Las Vegas, USA</option>
+                                    <option value="boston">Boston, USA</option>
+                                    <option value="washington dc">Washington DC, USA</option>
+                                    <option value="seattle">Seattle, USA</option>
+                                    <option value="toronto">Toronto, Canada</option>
+                                    <option value="vancouver">Vancouver, Canada</option>
+                                    <option value="montreal">Montreal, Canada</option>
+                                    <option value="mexico city">Mexico City, Mexico</option>
+                                    <option value="cancun">Cancun, Mexico</option>
+                                </optgroup>
+                                <optgroup label="South America">
+                                    <option value="rio de janeiro">Rio de Janeiro, Brazil</option>
+                                    <option value="sao paulo">Sao Paulo, Brazil</option>
+                                    <option value="buenos aires">Buenos Aires, Argentina</option>
+                                    <option value="lima">Lima, Peru</option>
+                                    <option value="bogota">Bogota, Colombia</option>
+                                    <option value="santiago">Santiago, Chile</option>
+                                </optgroup>
+                                <optgroup label="Africa">
+                                    <option value="cairo">Cairo, Egypt</option>
+                                    <option value="cape town">Cape Town, South Africa</option>
+                                    <option value="johannesburg">Johannesburg, South Africa</option>
+                                    <option value="marrakech">Marrakech, Morocco</option>
+                                    <option value="casablanca">Casablanca, Morocco</option>
+                                    <option value="nairobi">Nairobi, Kenya</option>
+                                    <option value="lagos">Lagos, Nigeria</option>
+                                </optgroup>
+                                <optgroup label="Oceania">
+                                    <option value="sydney">Sydney, Australia</option>
+                                    <option value="melbourne">Melbourne, Australia</option>
+                                    <option value="brisbane">Brisbane, Australia</option>
+                                    <option value="perth">Perth, Australia</option>
+                                    <option value="auckland">Auckland, New Zealand</option>
+                                    <option value="wellington">Wellington, New Zealand</option>
+                                    <option value="bali">Bali, Indonesia</option>
+                                </optgroup>
+                                <optgroup label="Island Destinations">
+                                    <option value="maldives">Maldives</option>
+                                    <option value="mauritius">Mauritius</option>
+                                    <option value="seychelles">Seychelles</option>
+                                </optgroup>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fas fa-map-marker-alt"></i> Destination</label>
+                            <select id="destination-select">
+                                <option value="">Select Destination</option>
+                                <optgroup label="India">
+                                    <option value="mumbai">Mumbai</option>
+                                    <option value="delhi">Delhi</option>
+                                    <option value="bangalore">Bangalore</option>
+                                    <option value="kolkata">Kolkata</option>
+                                    <option value="chennai">Chennai</option>
+                                    <option value="hyderabad">Hyderabad</option>
+                                    <option value="pune">Pune</option>
+                                    <option value="ahmedabad">Ahmedabad</option>
+                                    <option value="jaipur">Jaipur</option>
+                                    <option value="goa">Goa</option>
+                                    <option value="manali">Manali</option>
+                                    <option value="kerala">Kerala</option>
+                                    <option value="rajasthan">Rajasthan</option>
+                                    <option value="darjeeling">Darjeeling</option>
+                                    <option value="shimla">Shimla</option>
+                                </optgroup>
+                                <optgroup label="Asia">
+                                    <option value="tokyo">Tokyo, Japan</option>
+                                    <option value="singapore">Singapore</option>
+                                    <option value="bangkok">Bangkok, Thailand</option>
+                                    <option value="hong kong">Hong Kong</option>
+                                    <option value="seoul">Seoul, South Korea</option>
+                                    <option value="beijing">Beijing, China</option>
+                                    <option value="shanghai">Shanghai, China</option>
+                                    <option value="dubai">Dubai, UAE</option>
+                                    <option value="abu dhabi">Abu Dhabi, UAE</option>
+                                    <option value="kuala lumpur">Kuala Lumpur, Malaysia</option>
+                                    <option value="jakarta">Jakarta, Indonesia</option>
+                                    <option value="manila">Manila, Philippines</option>
+                                    <option value="ho chi minh city">Ho Chi Minh City, Vietnam</option>
+                                    <option value="hanoi">Hanoi, Vietnam</option>
+                                    <option value="taipei">Taipei, Taiwan</option>
+                                    <option value="osaka">Osaka, Japan</option>
+                                    <option value="kyoto">Kyoto, Japan</option>
+                                    <option value="istanbul">Istanbul, Turkey</option>
+                                    <option value="tel aviv">Tel Aviv, Israel</option>
+                                    <option value="jerusalem">Jerusalem, Israel</option>
+                                    <option value="riyadh">Riyadh, Saudi Arabia</option>
+                                    <option value="doha">Doha, Qatar</option>
+                                    <option value="kathmandu">Kathmandu, Nepal</option>
+                                    <option value="colombo">Colombo, Sri Lanka</option>
+                                    <option value="dhaka">Dhaka, Bangladesh</option>
+                                    <option value="phuket">Phuket, Thailand</option>
+                                </optgroup>
+                                <optgroup label="Europe">
+                                    <option value="london">London, UK</option>
+                                    <option value="paris">Paris, France</option>
+                                    <option value="rome">Rome, Italy</option>
+                                    <option value="barcelona">Barcelona, Spain</option>
+                                    <option value="madrid">Madrid, Spain</option>
+                                    <option value="amsterdam">Amsterdam, Netherlands</option>
+                                    <option value="berlin">Berlin, Germany</option>
+                                    <option value="munich">Munich, Germany</option>
+                                    <option value="vienna">Vienna, Austria</option>
+                                    <option value="prague">Prague, Czech Republic</option>
+                                    <option value="budapest">Budapest, Hungary</option>
+                                    <option value="warsaw">Warsaw, Poland</option>
+                                    <option value="stockholm">Stockholm, Sweden</option>
+                                    <option value="copenhagen">Copenhagen, Denmark</option>
+                                    <option value="oslo">Oslo, Norway</option>
+                                    <option value="helsinki">Helsinki, Finland</option>
+                                    <option value="dublin">Dublin, Ireland</option>
+                                    <option value="edinburgh">Edinburgh, UK</option>
+                                    <option value="brussels">Brussels, Belgium</option>
+                                    <option value="zurich">Zurich, Switzerland</option>
+                                    <option value="geneva">Geneva, Switzerland</option>
+                                    <option value="milan">Milan, Italy</option>
+                                    <option value="venice">Venice, Italy</option>
+                                    <option value="florence">Florence, Italy</option>
+                                    <option value="athens">Athens, Greece</option>
+                                    <option value="lisbon">Lisbon, Portugal</option>
+                                    <option value="porto">Porto, Portugal</option>
+                                    <option value="moscow">Moscow, Russia</option>
+                                    <option value="saint petersburg">Saint Petersburg, Russia</option>
+                                </optgroup>
+                                <optgroup label="North America">
+                                    <option value="new york">New York, USA</option>
+                                    <option value="los angeles">Los Angeles, USA</option>
+                                    <option value="chicago">Chicago, USA</option>
+                                    <option value="san francisco">San Francisco, USA</option>
+                                    <option value="miami">Miami, USA</option>
+                                    <option value="las vegas">Las Vegas, USA</option>
+                                    <option value="boston">Boston, USA</option>
+                                    <option value="washington dc">Washington DC, USA</option>
+                                    <option value="seattle">Seattle, USA</option>
+                                    <option value="toronto">Toronto, Canada</option>
+                                    <option value="vancouver">Vancouver, Canada</option>
+                                    <option value="montreal">Montreal, Canada</option>
+                                    <option value="mexico city">Mexico City, Mexico</option>
+                                    <option value="cancun">Cancun, Mexico</option>
+                                </optgroup>
+                                <optgroup label="South America">
+                                    <option value="rio de janeiro">Rio de Janeiro, Brazil</option>
+                                    <option value="sao paulo">Sao Paulo, Brazil</option>
+                                    <option value="buenos aires">Buenos Aires, Argentina</option>
+                                    <option value="lima">Lima, Peru</option>
+                                    <option value="bogota">Bogota, Colombia</option>
+                                    <option value="santiago">Santiago, Chile</option>
+                                </optgroup>
+                                <optgroup label="Africa">
+                                    <option value="cairo">Cairo, Egypt</option>
+                                    <option value="cape town">Cape Town, South Africa</option>
+                                    <option value="johannesburg">Johannesburg, South Africa</option>
+                                    <option value="marrakech">Marrakech, Morocco</option>
+                                    <option value="casablanca">Casablanca, Morocco</option>
+                                    <option value="nairobi">Nairobi, Kenya</option>
+                                    <option value="lagos">Lagos, Nigeria</option>
+                                </optgroup>
+                                <optgroup label="Oceania">
+                                    <option value="sydney">Sydney, Australia</option>
+                                    <option value="melbourne">Melbourne, Australia</option>
+                                    <option value="brisbane">Brisbane, Australia</option>
+                                    <option value="perth">Perth, Australia</option>
+                                    <option value="auckland">Auckland, New Zealand</option>
+                                    <option value="wellington">Wellington, New Zealand</option>
+                                    <option value="bali">Bali, Indonesia</option>
+                                </optgroup>
+                                <optgroup label="Island Destinations">
+                                    <option value="maldives">Maldives</option>
+                                    <option value="mauritius">Mauritius</option>
+                                    <option value="seychelles">Seychelles</option>
+                                </optgroup>
+                            </select>
+                        </div>
+                        <div class="map-container-wrapper">
+                            <div id="destination-map" class="destination-map"></div>
+                            <div id="distance-info" class="distance-info"></div>
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fas fa-calendar"></i> Travel Date</label>
+                            <input type="date" id="trip-date">
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fas fa-calendar"></i> Return Date</label>
+                            <input type="date" id="return-date">
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fas fa-users"></i> Number of Travelers</label>
+                            <select id="trip-travelers">
+                                <option>1 Traveler</option>
+                                <option>2 Travelers</option>
+                                <option>3 Travelers</option>
+                                <option>4 Travelers</option>
+                                <option>5+ Travelers</option>
+                            </select>
+                        </div>
+                        <button class="btn-next" onclick="goToStep(2)">Next: Choose Hotel</button>
+                    </div>
+                </div>
+
+                <!-- Step 2: Accommodation -->
+                <div class="builder-content" id="step-2">
+                    <h2>Choose Your Accommodation</h2>
+                    <div class="hotels-grid">
+                        <div class="hotel-option">
+                            <input type="radio" name="hotel" id="hotel-budget" value="budget" data-price="2000">
+                            <label for="hotel-budget">
+                                <div class="hotel-option-content">
+                                    <h3>Budget Hotel</h3>
+                                    <p>3 Star Hotel</p>
+                                    <div class="hotel-features">
+                                        <span><i class="fas fa-wifi"></i> WiFi</span>
+                                        <span><i class="fas fa-utensils"></i> Breakfast</span>
+                                    </div>
+                                    <div class="hotel-price">+₹2,000/night</div>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="hotel-option">
+                            <input type="radio" name="hotel" id="hotel-standard" value="standard" data-price="4000"
+                                checked>
+                            <label for="hotel-standard">
+                                <div class="hotel-option-content">
+                                    <h3>Standard Hotel</h3>
+                                    <p>4 Star Hotel</p>
+                                    <div class="hotel-features">
+                                        <span><i class="fas fa-wifi"></i> WiFi</span>
+                                        <span><i class="fas fa-swimming-pool"></i> Pool</span>
+                                        <span><i class="fas fa-utensils"></i> All Meals</span>
+                                    </div>
+                                    <div class="hotel-price">+₹4,000/night</div>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="hotel-option">
+                            <input type="radio" name="hotel" id="hotel-luxury" value="luxury" data-price="8000">
+                            <label for="hotel-luxury">
+                                <div class="hotel-option-content">
+                                    <h3>Luxury Resort</h3>
+                                    <p>5 Star Resort</p>
+                                    <div class="hotel-features">
+                                        <span><i class="fas fa-wifi"></i> WiFi</span>
+                                        <span><i class="fas fa-swimming-pool"></i> Pool</span>
+                                        <span><i class="fas fa-spa"></i> Spa</span>
+                                        <span><i class="fas fa-utensils"></i> All Meals</span>
+                                    </div>
+                                    <div class="hotel-price">+₹8,000/night</div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="step-buttons">
+                        <button class="btn-back" onclick="goToStep(1)">Back</button>
+                        <button class="btn-next" onclick="goToStep(3)">Next: Choose Transport</button>
+                    </div>
+                </div>
+
+                <!-- Step 3: Transport -->
+                <div class="builder-content" id="step-3">
+                    <h2>How do you want to travel?</h2>
+                    <div class="transport-grid">
+                        <div class="transport-option">
+                            <input type="radio" name="transport" id="transport-flight" value="flight" data-price="5000">
+                            <label for="transport-flight">
+                                <div class="transport-icon"><i class="fas fa-plane"></i></div>
+                                <h3>Flight</h3>
+                                <p>Fast & Comfortable</p>
+                                <div class="transport-price">+₹5,000</div>
+                            </label>
+                        </div>
+                        <div class="transport-option">
+                            <input type="radio" name="transport" id="transport-train" value="train" data-price="2000"
+                                checked>
+                            <label for="transport-train">
+                                <div class="transport-icon"><i class="fas fa-train"></i></div>
+                                <h3>Train</h3>
+                                <p>Scenic Journey</p>
+                                <div class="transport-price">+₹2,000</div>
+                            </label>
+                        </div>
+                        <div class="transport-option">
+                            <input type="radio" name="transport" id="transport-bus" value="bus" data-price="1500">
+                            <label for="transport-bus">
+                                <div class="transport-icon"><i class="fas fa-bus"></i></div>
+                                <h3>Bus</h3>
+                                <p>Economical Option</p>
+                                <div class="transport-price">+₹1,500</div>
+                            </label>
+                        </div>
+                        <div class="transport-option">
+                            <input type="radio" name="transport" id="transport-self" value="self" data-price="0">
+                            <label for="transport-self">
+                                <div class="transport-icon"><i class="fas fa-car"></i></div>
+                                <h3>Self Drive</h3>
+                                <p>Your Own Vehicle</p>
+                                <div class="transport-price">No Cost</div>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="step-buttons">
+                        <button class="btn-back" onclick="goToStep(2)">Back</button>
+                        <button class="btn-next" onclick="goToStep(4)">Next: Add Activities</button>
+                    </div>
+                </div>
+
+                <!-- Step 4: Activities -->
+                <div class="builder-content" id="step-4">
+                    <h2>Add Activities & Experiences</h2>
+                    <div class="activities-grid">
+                        <div class="activity-option">
+                            <input type="checkbox" id="activity-water" class="activity-checkbox" data-price="1500">
+                            <label for="activity-water">
+                                <div class="activity-icon"><i class="fas fa-swimmer"></i></div>
+                                <h3>Water Sports</h3>
+                                <p>Jet Ski, Parasailing, etc.</p>
+                                <div class="activity-price">+₹1,500</div>
+                            </label>
+                        </div>
+                        <div class="activity-option">
+                            <input type="checkbox" id="activity-sightseeing" class="activity-checkbox"
+                                data-price="2000">
+                            <label for="activity-sightseeing">
+                                <div class="activity-icon"><i class="fas fa-camera"></i></div>
+                                <h3>Sightseeing Tour</h3>
+                                <p>Guided city tour</p>
+                                <div class="activity-price">+₹2,000</div>
+                            </label>
+                        </div>
+                        <div class="activity-option">
+                            <input type="checkbox" id="activity-adventure" class="activity-checkbox" data-price="3000">
+                            <label for="activity-adventure">
+                                <div class="activity-icon"><i class="fas fa-mountain"></i></div>
+                                <h3>Adventure Sports</h3>
+                                <p>Trekking, Rafting, etc.</p>
+                                <div class="activity-price">+₹3,000</div>
+                            </label>
+                        </div>
+                        <div class="activity-option">
+                            <input type="checkbox" id="activity-cruise" class="activity-checkbox" data-price="2500">
+                            <label for="activity-cruise">
+                                <div class="activity-icon"><i class="fas fa-ship"></i></div>
+                                <h3>Sunset Cruise</h3>
+                                <p>Evening boat cruise</p>
+                                <div class="activity-price">+₹2,500</div>
+                            </label>
+                        </div>
+                        <div class="activity-option">
+                            <input type="checkbox" id="activity-spa" class="activity-checkbox" data-price="2000">
+                            <label for="activity-spa">
+                                <div class="activity-icon"><i class="fas fa-spa"></i></div>
+                                <h3>Spa & Wellness</h3>
+                                <p>Relaxation therapy</p>
+                                <div class="activity-price">+₹2,000</div>
+                            </label>
+                        </div>
+                        <div class="activity-option">
+                            <input type="checkbox" id="activity-food" class="activity-checkbox" data-price="1500">
+                            <label for="activity-food">
+                                <div class="activity-icon"><i class="fas fa-utensils"></i></div>
+                                <h3>Food Tour</h3>
+                                <p>Local cuisine experience</p>
+                                <div class="activity-price">+₹1,500</div>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="step-buttons">
+                        <button class="btn-back" onclick="goToStep(3)">Back</button>
+                        <button class="btn-next" onclick="goToStep(5)">Next: Review Trip</button>
+                    </div>
+                </div>
+
+                <!-- Step 5: Review -->
+                <div class="builder-content" id="step-5">
+                    <h2>Review Your Custom Trip</h2>
+                    <div class="trip-summary">
+                        <div class="summary-section">
+                            <h3><i class="fas fa-map-marker-alt"></i> Destination</h3>
+                            <p id="summary-destination">-</p>
+                        </div>
+                        <div class="summary-section">
+                            <h3><i class="fas fa-calendar"></i> Travel Dates</h3>
+                            <p id="summary-dates">-</p>
+                        </div>
+                        <div class="summary-section">
+                            <h3><i class="fas fa-users"></i> Travelers</h3>
+                            <p id="summary-travelers">-</p>
+                        </div>
+                        <div class="summary-section">
+                            <h3><i class="fas fa-hotel"></i> Accommodation</h3>
+                            <p id="summary-hotel">-</p>
+                        </div>
+                        <div class="summary-section">
+                            <h3><i class="fas fa-plane"></i> Transport</h3>
+                            <p id="summary-transport">-</p>
+                        </div>
+                        <div class="summary-section">
+                            <h3><i class="fas fa-star"></i> Activities</h3>
+                            <p id="summary-activities">-</p>
+                        </div>
+                        <div class="summary-total">
+                            <h3>Total Price</h3>
+                            <div class="total-amount" id="trip-total-price">₹5,000</div>
+                            <p class="price-note">Price per person</p>
+                        </div>
+                    </div>
+                    <div class="step-buttons">
+                        <button class="btn-back" onclick="goToStep(4)">Back</button>
+                        <button class="btn-book-now" onclick="saveTripAndBook()">Book This Trip</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>TravelPlanner</h3>
+                    <p>Your trusted partner for memorable travel experiences.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="holidays.html">Holiday Packages</a></li>
+                        <li><a href="flights.html">Flights</a></li>
+                        <li><a href="hotels.html">Hotels</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="support.html">Help Center</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> +91 1800-123-4567</li>
+                        <li><i class="fas fa-envelope"></i> support@travelplanner.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 TravelPlanner. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/map-utils.js"></script>
+    <script src="js/trip-builder.js"></script>
+    <script>
+
+        // Calculate and display distance between cities
+        function calculateAndDisplayDistance() {
+            const fromCity = document.getElementById('from-city-select')?.value;
+            const destination = document.getElementById('destination-select')?.value;
+            const distanceInfo = document.getElementById('distance-info');
+
+            if (!fromCity || !destination) {
+                if (distanceInfo) {
+                    distanceInfo.innerHTML = '';
+                }
+                // Show only destination if selected
+                if (destination && typeof updateMapForDestination === 'function') {
+                    updateMapForDestination(destination);
+                } else if (typeof mapInstance !== 'undefined' && mapInstance) {
+                    // Reset map to default world view
+                    mapInstance.setView([20, 0], 2);
+                    if (typeof clearMapMarkers === 'function') {
+                        clearMapMarkers();
+                    }
+                }
+                return;
+            }
+
+            // Both cities selected - calculate distance and show on map
+            if (typeof showDistanceBetween === 'function') {
+                const distance = showDistanceBetween(fromCity, destination);
+
+                if (distance && distanceInfo && typeof formatDistance === 'function') {
+                    // Format city names properly (handle multi-word names like "new york", "ho chi minh city")
+                    const formatCityName = (name) => {
+                        return name.split(' ').map(word =>
+                            word.charAt(0).toUpperCase() + word.slice(1)
+                        ).join(' ');
+                    };
+                    const fromCityName = formatCityName(fromCity);
+                    const destinationName = formatCityName(destination);
+
+                    distanceInfo.innerHTML = `
+                        <div class="distance-card">
+                            <i class="fas fa-route"></i>
+                            <div>
+                                <strong>Distance</strong>
+                                <p><strong>${fromCityName}</strong> to <strong>${destinationName}</strong>: ${formatDistance(distance)}</p>
+                            </div>
+                        </div>
+                    `;
+                } else if (distanceInfo) {
+                    distanceInfo.innerHTML = `
+                        <div class="distance-card" style="border-left-color: #ff9800;">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <div>
+                                <strong>Unable to calculate distance</strong>
+                                <p>Please ensure both cities are valid</p>
+                            </div>
+                        </div>
+                    `;
+                }
+            }
+        }
+
+        // Update distance when from city changes
+        document.addEventListener('DOMContentLoaded', () => {
+            const fromCitySelect = document.getElementById('from-city-select');
+            const destinationSelect = document.getElementById('destination-select');
+
+            // Initialize map with world view
+            setTimeout(() => {
+                if (typeof initDestinationMap === 'function') {
+                    initDestinationMap('destination-map', [20, 0], 2);
+                }
+            }, 500);
+
+            // Add event listeners for both dropdowns
+            if (fromCitySelect) {
+                fromCitySelect.addEventListener('change', () => {
+                    calculateAndDisplayDistance();
+                });
+            }
+
+            if (destinationSelect) {
+                destinationSelect.addEventListener('change', () => {
+                    calculateAndDisplayDistance();
+                });
+            }
+
+            // Load modify trip data if exists
+            const modifyTripData = localStorage.getItem('modifyTrip');
+            if (modifyTripData) {
+                try {
+                    const trip = JSON.parse(modifyTripData);
+
+                    // Set form values
+                    if (trip.fromCity && fromCitySelect) {
+                        fromCitySelect.value = trip.fromCity.toLowerCase();
+                    }
+                    if (trip.destination && destinationSelect) {
+                        destinationSelect.value = trip.destination.toLowerCase();
+                    }
+
+                    // Calculate distance after setting both values
+                    setTimeout(() => {
+                        if (typeof calculateAndDisplayDistance === 'function') {
+                            calculateAndDisplayDistance();
+                        }
+                    }, 600);
+                    if (trip.startDate) {
+                        const startDateInput = document.getElementById('trip-date');
+                        if (startDateInput) {
+                            const startDate = new Date(trip.startDate);
+                            startDateInput.value = startDate.toISOString().split('T')[0];
+                        }
+                    }
+                    if (trip.endDate) {
+                        const endDateInput = document.getElementById('return-date');
+                        if (endDateInput) {
+                            const endDate = new Date(trip.endDate);
+                            endDateInput.value = endDate.toISOString().split('T')[0];
+                        }
+                    }
+                    if (trip.travelers) {
+                        const travelersSelect = document.getElementById('trip-travelers');
+                        if (travelersSelect) {
+                            travelersSelect.value = `${trip.travelers} Traveler${trip.travelers > 1 ? 's' : ''}`;
+                        }
+                    }
+
+                    // Select hotel if exists
+                    if (trip.hotel) {
+                        const hotelRadios = document.querySelectorAll('input[name="hotel"]');
+                        hotelRadios.forEach(radio => {
+                            const hotelName = radio.nextElementSibling.querySelector('h3').textContent;
+                            if (hotelName === trip.hotel) {
+                                radio.checked = true;
+                            }
+                        });
+                    }
+
+                    // Select transport if exists
+                    if (trip.transport) {
+                        const transportRadios = document.querySelectorAll('input[name="transport"]');
+                        transportRadios.forEach(radio => {
+                            const transportName = radio.nextElementSibling.querySelector('h3').textContent;
+                            if (transportName === trip.transport) {
+                                radio.checked = true;
+                            }
+                        });
+                    }
+
+                    // Select activities if exists
+                    if (trip.activities && trip.activities.length > 0) {
+                        const activityCheckboxes = document.querySelectorAll('.activity-checkbox');
+                        activityCheckboxes.forEach(checkbox => {
+                            const activityName = checkbox.nextElementSibling.querySelector('h3').textContent;
+                            if (trip.activities.includes(activityName)) {
+                                checkbox.checked = true;
+                            }
+                        });
+                    }
+
+                    // Calculate and display distance after setting values
+                    setTimeout(() => {
+                        if (typeof calculateAndDisplayDistance === 'function') {
+                            calculateAndDisplayDistance();
+                        }
+                    }, 700);
+
+                    // Update summary
+                    if (typeof updateTripSummary === 'function') {
+                        updateTripSummary();
+                    }
+                    if (typeof updateTripPrice === 'function') {
+                        updateTripPrice();
+                    }
+
+                    // Clear modify trip data after loading
+                    localStorage.removeItem('modifyTrip');
+                } catch (error) {
+                    console.error('Error loading modify trip data:', error);
+                }
+            }
+        });
+
+        function saveTripAndBook() {
+            const fromCity = document.getElementById('from-city-select')?.value;
+            const destination = document.getElementById('destination-select')?.value;
+            const tripDate = document.getElementById('trip-date')?.value;
+            const returnDate = document.getElementById('return-date')?.value;
+            const travelers = document.getElementById('trip-travelers')?.value;
+
+            const selectedHotel = document.querySelector('input[name="hotel"]:checked');
+            const hotelText = selectedHotel ? selectedHotel.nextElementSibling.querySelector('h3').textContent : '';
+
+            const selectedTransport = document.querySelector('input[name="transport"]:checked');
+            const transportText = selectedTransport ? selectedTransport.nextElementSibling.querySelector('h3').textContent : '';
+
+            const activities = Array.from(document.querySelectorAll('.activity-checkbox:checked'))
+                .map(cb => cb.nextElementSibling.querySelector('h3').textContent);
+
+            const priceText = document.getElementById('trip-total-price')?.textContent || '0';
+            const price = parseInt(priceText.replace(/[^\d]/g, ''));
+
+            if (!fromCity || !destination || !tripDate || !returnDate) {
+                alert('Please select a from city, destination, travel date, and return date.');
+                return;
+            }
+
+            const travelersValue = travelers ? parseInt(travelers.charAt(0)) : 1;
+
+            const tripData = {
+                fromCity,
+                destination,
+                startDate: tripDate,
+                endDate: returnDate,
+                travelers: travelersValue,
+                hotel: hotelText,
+                transport: transportText,
+                activities,
+                totalPrice: price * travelersValue // Store Grand Total
+            };
+
+            localStorage.setItem('currentTrip', JSON.stringify(tripData));
+            window.location.href = 'booking.html';
+        }
+    </script>
+</body>
+
+</html>

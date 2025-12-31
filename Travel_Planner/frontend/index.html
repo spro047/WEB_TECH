@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TravelPlanner - Your Perfect Holiday Awaits</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <i class="fas fa-plane"></i>
+                    <span>TravelPlanner</span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="holidays.html">Holidays</a></li>
+
+                    <li><a href="trip-builder.html">Trip Builder</a></li>
+                    <li><a href="my-trips.html">My Trips</a></li>
+
+                    <li><a href="support.html">Support</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <a href="login.html" class="btn-login">Login</a>
+                    <a href="signup.html" class="btn-signup">Sign Up</a>
+                </div>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Discover Your Perfect Holiday</h1>
+                <p class="hero-subtitle">Explore amazing destinations with curated packages</p>
+
+                <!-- Website Info & Description -->
+                <div class="hero-description-container">
+                    <div class="hero-info-card">
+                        <h3><i class="fas fa-globe-asia"></i> About Us</h3>
+                        <p>Welcome to TravelPlanner, your premium gateway to the world's most enchanting destinations.
+                            We are dedicated to crafting bespoke travel experiences that blend luxury, adventure, and
+                            cultural immersion. Whether you seek a tranquil escape or an adrenaline-fueled journey, we
+                            are here to make your travel dreams a reality.</p>
+                    </div>
+                    <div class="hero-trips-card">
+                        <h3><i class="fas fa-route"></i> Our Journeys</h3>
+                        <p>Embark on unforgettable trips curated by experts. From the sun-kissed beaches of the tropics
+                            to the rugged trails of the Himalayas, our packages offer a perfect balance of comfort and
+                            exploration. Discover hidden gems, savor authentic cuisines, and create stories worth
+                            telling.</p>
+                        <a href="holidays.html" class="btn-explore">Explore Destinations <i
+                                class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Destinations -->
+    <section class="popular-destinations">
+        <div class="container">
+            <h2 class="section-title">Popular Destinations</h2>
+            <div class="destinations-tabs">
+                <button class="dest-tab active" data-dest="india">India</button>
+                <button class="dest-tab" data-dest="international">International</button>
+            </div>
+
+            <div class="destinations-carousel" id="india-destinations">
+                <div class="dest-card">
+                    <img src="images/goa.png" alt="Goa">
+                    <div class="dest-overlay">
+                        <h3>Goa</h3>
+                        <p>Starting from ₹15,000</p>
+                    </div>
+                </div>
+                <div class="dest-card">
+                    <img src="images/manali.png" alt="Manali">
+                    <div class="dest-overlay">
+                        <h3>Manali</h3>
+                        <p>Starting from ₹18,000</p>
+                    </div>
+                </div>
+                <div class="dest-card">
+                    <img src="images/kerala.png" alt="Kerala">
+                    <div class="dest-overlay">
+                        <h3>Kerala</h3>
+                        <p>Starting from ₹20,000</p>
+                    </div>
+                </div>
+                <div class="dest-card">
+                    <img src="images/rajasthan.png" alt="Rajasthan">
+                    <div class="dest-overlay">
+                        <h3>Rajasthan</h3>
+                        <p>Starting from ₹22,000</p>
+                    </div>
+                </div>
+                <div class="dest-card">
+                    <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=400" alt="Darjeeling">
+                    <div class="dest-overlay">
+                        <h3>Darjeeling</h3>
+                        <p>Starting from ₹16,000</p>
+                    </div>
+                </div>
+                <div class="dest-card">
+                    <img src="https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=400" alt="Shimla">
+                    <div class="dest-overlay">
+                        <h3>Shimla</h3>
+                        <p>Starting from ₹17,000</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="destinations-carousel hidden" id="international-destinations">
+                <div class="dest-card">
+                    <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=400" alt="Paris">
+                    <div class="dest-overlay">
+                        <h3>Paris</h3>
+                        <p>Starting from ₹80,000</p>
+                    </div>
+                </div>
+                <div class="dest-card">
+                    <img src="https://images.unsplash.com/photo-1539037116277-4db20889f2d4?w=400" alt="Dubai">
+                    <div class="dest-overlay">
+                        <h3>Dubai</h3>
+                        <p>Starting from ₹45,000</p>
+                    </div>
+                </div>
+                <div class="dest-card">
+                    <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400" alt="Switzerland">
+                    <div class="dest-overlay">
+                        <h3>Switzerland</h3>
+                        <p>Starting from ₹1,20,000</p>
+                    </div>
+                </div>
+                <div class="dest-card">
+                    <img src="https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=400" alt="Bali">
+                    <div class="dest-overlay">
+                        <h3>Bali</h3>
+                        <p>Starting from ₹35,000</p>
+                    </div>
+                </div>
+                <div class="dest-card">
+                    <img src="https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?w=400" alt="Thailand">
+                    <div class="dest-overlay">
+                        <h3>Thailand</h3>
+                        <p>Starting from ₹30,000</p>
+                    </div>
+                </div>
+                <div class="dest-card">
+                    <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=400" alt="Singapore">
+                    <div class="dest-overlay">
+                        <h3>Singapore</h3>
+                        <p>Starting from ₹40,000</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Packages -->
+    <section class="featured-packages">
+        <div class="container">
+            <h2 class="section-title">Featured Holiday Packages</h2>
+            <div class="packages-grid">
+                <div class="package-card">
+                    <div class="package-image">
+                        <img src="images/goa.png" alt="Goa Beach Package">
+                        <span class="package-badge">Best Seller</span>
+                        <div class="package-rating">
+                            <i class="fas fa-star"></i>
+                            <span>4.5</span>
+                        </div>
+                    </div>
+                    <div class="package-content">
+                        <h3>Goa Beach Paradise</h3>
+                        <p class="package-duration"><i class="fas fa-clock"></i> 4 Days / 3 Nights</p>
+                        <div class="package-highlights">
+                            <span><i class="fas fa-hotel"></i> 3 Star Hotel</span>
+                            <span><i class="fas fa-utensils"></i> Breakfast</span>
+                            <span><i class="fas fa-car"></i> Transfer</span>
+                        </div>
+                        <div class="package-price">
+                            <span class="price">₹15,999</span>
+                            <span class="price-label">per person</span>
+                        </div>
+                        <a href="package-details.html" class="btn-view-details">View Details</a>
+                    </div>
+                </div>
+
+                <div class="package-card">
+                    <div class="package-image">
+                        <img src="images/manali.png" alt="Manali Adventure">
+                        <span class="package-badge">Adventure</span>
+                        <div class="package-rating">
+                            <i class="fas fa-star"></i>
+                            <span>4.7</span>
+                        </div>
+                    </div>
+                    <div class="package-content">
+                        <h3>Manali Adventure Trip</h3>
+                        <p class="package-duration"><i class="fas fa-clock"></i> 5 Days / 4 Nights</p>
+                        <div class="package-highlights">
+                            <span><i class="fas fa-hotel"></i> 4 Star Hotel</span>
+                            <span><i class="fas fa-utensils"></i> All Meals</span>
+                            <span><i class="fas fa-skiing"></i> Activities</span>
+                        </div>
+                        <div class="package-price">
+                            <span class="price">₹22,999</span>
+                            <span class="price-label">per person</span>
+                        </div>
+                        <a href="package-details-manali.html" class="btn-view-details">View Details</a>
+                    </div>
+                </div>
+
+                <div class="package-card">
+                    <div class="package-image">
+                        <img src="images/kerala.png" alt="Kerala Backwaters">
+                        <span class="package-badge">Family</span>
+                        <div class="package-rating">
+                            <i class="fas fa-star"></i>
+                            <span>4.8</span>
+                        </div>
+                    </div>
+                    <div class="package-content">
+                        <h3>Kerala Backwaters</h3>
+                        <p class="package-duration"><i class="fas fa-clock"></i> 6 Days / 5 Nights</p>
+                        <div class="package-highlights">
+                            <span><i class="fas fa-hotel"></i> 3 Star Hotel</span>
+                            <span><i class="fas fa-utensils"></i> Breakfast</span>
+                            <span><i class="fas fa-ship"></i> Houseboat</span>
+                        </div>
+                        <div class="package-price">
+                            <span class="price">₹28,999</span>
+                            <span class="price-label">per person</span>
+                        </div>
+                        <a href="package-details-kerala.html" class="btn-view-details">View Details</a>
+                    </div>
+                </div>
+
+                <div class="package-card">
+                    <div class="package-image">
+                        <img src="images/rajasthan.png" alt="Rajasthan Royal">
+                        <span class="package-badge">Heritage</span>
+                        <div class="package-rating">
+                            <i class="fas fa-star"></i>
+                            <span>4.6</span>
+                        </div>
+                    </div>
+                    <div class="package-content">
+                        <h3>Rajasthan Royal Tour</h3>
+                        <p class="package-duration"><i class="fas fa-clock"></i> 7 Days / 6 Nights</p>
+                        <div class="package-highlights">
+                            <span><i class="fas fa-hotel"></i> 4 Star Hotel</span>
+                            <span><i class="fas fa-utensils"></i> All Meals</span>
+                            <span><i class="fas fa-car"></i> AC Transport</span>
+                        </div>
+                        <div class="package-price">
+                            <span class="price">₹35,999</span>
+                            <span class="price-label">per person</span>
+                        </div>
+                        <a href="package-details-rajasthan.html" class="btn-view-details">View Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Special Offers -->
+    <section class="special-offers">
+        <div class="container">
+            <h2 class="section-title">Special Offers & Deals</h2>
+            <div class="offers-grid">
+                <div class="offer-card">
+                    <div class="offer-image">
+                        <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=600" alt="Summer Sale">
+                        <div class="offer-badge">30% OFF</div>
+                    </div>
+                    <div class="offer-content">
+                        <h3>Summer Sale</h3>
+                        <p>Get up to 30% off on international destinations</p>
+                    </div>
+                </div>
+                <div class="offer-card">
+                    <div class="offer-image">
+                        <img src="https://images.unsplash.com/photo-1539037116277-4db20889f2d4?w=600" alt="Early Bird">
+                        <div class="offer-badge">20% OFF</div>
+                    </div>
+                    <div class="offer-content">
+                        <h3>Early Bird Discount</h3>
+                        <p>Book 60 days in advance and save 20%</p>
+                    </div>
+                </div>
+                <div class="offer-card">
+                    <div class="offer-image">
+                        <img src="https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=600"
+                            alt="Group Travel">
+                        <div class="offer-badge">15% OFF</div>
+                    </div>
+                    <div class="offer-content">
+                        <h3>Group Travel Special</h3>
+                        <p>Travel with 4+ people and get 15% discount</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-choose-us">
+        <div class="container">
+            <h2 class="section-title">Why Choose TravelPlanner?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Trusted & Secure</h3>
+                    <p>100% secure payments and verified travel partners</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>24/7 Support</h3>
+                    <p>Round-the-clock customer support for all your travel needs</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-tag"></i>
+                    </div>
+                    <h3>Best Price Guarantee</h3>
+                    <p>We ensure the best prices for all our packages</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>Curated Experiences</h3>
+                    <p>Handpicked destinations and experiences for memorable trips</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Our Customers Say</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"Amazing experience! The Goa package was perfectly planned and executed.
+                        Highly recommended!"</p>
+                    <div class="testimonial-author">
+                        <img src="https://ui-avatars.com/api/?name=Rahul+Sharma&background=random" alt="Rahul Sharma">
+                        <div>
+                            <h4>Rahul Sharma</h4>
+                            <p>Mumbai</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"Best travel website! Great deals, easy booking, and excellent customer
+                        service."</p>
+                    <div class="testimonial-author">
+                        <img src="https://ui-avatars.com/api/?name=Priya+Patel&background=random" alt="Priya Patel">
+                        <div>
+                            <h4>Priya Patel</h4>
+                            <p>Delhi</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"The Manali trip exceeded all expectations. Everything was
+                        well-organized and hassle-free."</p>
+                    <div class="testimonial-author">
+                        <img src="https://ui-avatars.com/api/?name=Amit+Kumar&background=random" alt="Amit Kumar">
+                        <div>
+                            <h4>Amit Kumar</h4>
+                            <p>Bangalore</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>TravelPlanner</h3>
+                    <p>Your trusted partner for memorable travel experiences. Discover amazing destinations and create
+                        unforgettable memories.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="holidays.html">Holiday Packages</a></li>
+                        <li><a href="flights.html">Flights</a></li>
+                        <li><a href="hotels.html">Hotels</a></li>
+                        <li><a href="trip-builder.html">Trip Builder</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="support.html">Help Center</a></li>
+                        <li><a href="#">Cancellation Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> +91 1800-123-4567</li>
+                        <li><i class="fas fa-envelope"></i> support@travelplanner.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Mumbai, India</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 TravelPlanner. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

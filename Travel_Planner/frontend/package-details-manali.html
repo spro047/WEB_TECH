@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manali Adventure Trip - Package Details | TravelPlanner</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/package-details.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <i class="fas fa-plane"></i>
+                    <span>TravelPlanner</span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="holidays.html">Holidays</a></li>
+
+                    <li><a href="trip-builder.html">Trip Builder</a></li>
+                    <li><a href="my-trips.html">My Trips</a></li>
+
+                    <li><a href="support.html">Support</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <a href="login.html" class="btn-login">Login</a>
+                    <a href="signup.html" class="btn-signup">Sign Up</a>
+                </div>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Package Header -->
+    <section class="package-header"
+        style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/manali.png') center/cover;">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html">Home</a> / <a href="holidays.html">Holidays</a> / <span>Manali Adventure
+                    Trip</span>
+            </div>
+            <h1>Manali Adventure Trip</h1>
+            <div class="package-meta">
+                <span><i class="fas fa-clock"></i> 5 Days / 4 Nights</span>
+                <span><i class="fas fa-map-marker-alt"></i> Manali, HP</span>
+                <span><i class="fas fa-star"></i> 4.7 (189 Reviews)</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Image Gallery -->
+    <section class="gallery-section">
+        <div class="container">
+            <div class="gallery-main">
+                <img src="images/manali.png" alt="Manali Snow" class="gallery-image active">
+                <img src="https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=800" alt="Solang Valley"
+                    class="gallery-image">
+                <img src="https://images.unsplash.com/photo-1589139268676-4768393e2501?w=800" alt="Rohtang Pass"
+                    class="gallery-image">
+                <button class="gallery-nav prev" onclick="prevGalleryImage()"><i
+                        class="fas fa-chevron-left"></i></button>
+                <button class="gallery-nav next" onclick="nextGalleryImage()"><i
+                        class="fas fa-chevron-right"></i></button>
+            </div>
+            <div class="gallery-thumbnails">
+                <img src="images/manali.png" alt="Thumbnail 1" onclick="showGalleryImage(0)" class="active">
+                <img src="https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=800" alt="Thumbnail 2"
+                    onclick="showGalleryImage(1)">
+                <img src="https://images.unsplash.com/photo-1589139268676-4768393e2501?w=800" alt="Thumbnail 3"
+                    onclick="showGalleryImage(2)">
+            </div>
+        </div>
+    </section>
+
+    <!-- Package Content -->
+    <section class="package-content-section">
+        <div class="container">
+            <div class="content-wrapper">
+                <div class="main-content">
+                    <!-- Overview -->
+                    <div class="content-block">
+                        <h2>Overview</h2>
+                        <p>Embark on a thrilling adventure to the snow-capped mountains of Manali. This 5-day trip
+                            offers the perfect mix of adventure, nature, and relaxation. From skiing in Solang Valley to
+                            exploring the charming Mall Road, experience the best of the Himalayas.</p>
+                        <p>Ideal for adventure seekers and nature lovers, this package encompasses scenic splendor and
+                            adrenaline-pumping activities in the lap of nature.</p>
+                    </div>
+
+                    <!-- Itinerary -->
+                    <div class="content-block">
+                        <h2>Day-wise Itinerary</h2>
+                        <div class="itinerary">
+                            <div class="itinerary-item active">
+                                <div class="itinerary-header">
+                                    <span class="day-number">Day 1</span>
+                                    <h3>Arrival in Manali</h3>
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                                <div class="itinerary-content">
+                                    <p><strong>Morning:</strong> Arrive at Manali bus station. Transfer to hotel.
+                                        Check-in and rest.</p>
+                                    <p><strong>Evening:</strong> Walk around the Mall Road and visit Hadimba Devi
+                                        Temple.</p>
+                                    <p><strong>Meals:</strong> Dinner at hotel</p>
+                                </div>
+                            </div>
+
+                            <div class="itinerary-item">
+                                <div class="itinerary-header">
+                                    <span class="day-number">Day 2</span>
+                                    <h3>Solang Valley Adventure</h3>
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                                <div class="itinerary-content">
+                                    <p><strong>Morning:</strong> Head to Solang Valley for adventure sports like
+                                        Paragliding, Zorbing, and Skiing (seasonal).</p>
+                                    <p><strong>Afternoon:</strong> Picnic lunch at the valley.</p>
+                                    <p><strong>Evening:</strong> Return to hotel and bonfire.</p>
+                                    <p><strong>Meals:</strong> Breakfast, Dinner</p>
+                                </div>
+                            </div>
+
+                            <div class="itinerary-item">
+                                <div class="itinerary-header">
+                                    <span class="day-number">Day 3</span>
+                                    <h3>Rohtang Pass / Snow Point</h3>
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                                <div class="itinerary-content">
+                                    <p><strong>Full Day:</strong> Excursion to Rohtang Pass (subject to permit and
+                                        weather). Enjoy snow activities and breathtaking views.</p>
+                                    <p><strong>Meals:</strong> Breakfast, Dinner</p>
+                                </div>
+                            </div>
+
+                            <div class="itinerary-item">
+                                <div class="itinerary-header">
+                                    <span class="day-number">Day 4</span>
+                                    <h3>Kullu & Manikaran</h3>
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                                <div class="itinerary-content">
+                                    <p><strong>Morning:</strong> Drive to Kullu for River Rafting.</p>
+                                    <p><strong>Afternoon:</strong> Visit Manikaran Gurudwara and Hot Springs.</p>
+                                    <p><strong>Meals:</strong> Breakfast, Dinner</p>
+                                </div>
+                            </div>
+
+                            <div class="itinerary-item">
+                                <div class="itinerary-header">
+                                    <span class="day-number">Day 5</span>
+                                    <h3>Departure</h3>
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                                <div class="itinerary-content">
+                                    <p><strong>Morning:</strong> Check-out. Visit Vashisht Hot Water Springs if time
+                                        permits.</p>
+                                    <p><strong>Afternoon:</strong> Transfer to bus station for onward journey.</p>
+                                    <p><strong>Meals:</strong> Breakfast</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Inclusions -->
+                    <div class="content-block">
+                        <div class="inclusions-exclusions">
+                            <div class="inclusions">
+                                <h3><i class="fas fa-check-circle"></i> Inclusions</h3>
+                                <ul>
+                                    <li><i class="fas fa-check"></i> 4 Nights accommodation in 4-star hotel</li>
+                                    <li><i class="fas fa-check"></i> Daily Breakfast & Dinner</li>
+                                    <li><i class="fas fa-check"></i> Sightseeing by private cab</li>
+                                    <li><i class="fas fa-check"></i> Solang Valley Trip</li>
+                                </ul>
+                            </div>
+                            <div class="exclusions">
+                                <h3><i class="fas fa-times-circle"></i> Exclusions</h3>
+                                <ul>
+                                    <li><i class="fas fa-times"></i> Rohtang Pass Permit</li>
+                                    <li><i class="fas fa-times"></i> Adventure sports charges</li>
+                                    <li><i class="fas fa-times"></i> Lunch</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <!-- Reviews -->
+                    <div class="content-block">
+                        <h2>Reviews & Ratings</h2>
+                        <div class="reviews-summary">
+                            <div class="rating-breakdown">
+                                <div class="overall-rating">
+                                    <span class="rating-number">4.7</span>
+                                    <div class="rating-stars">
+                                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                            class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                            class="fas fa-star-half-alt"></i>
+                                    </div>
+                                    <p>Based on 189 reviews</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Booking Sidebar -->
+                <div class="booking-sidebar">
+                    <div class="booking-card">
+                        <div class="price-section">
+                            <span class="price-label">Starting from</span>
+                            <span class="price">₹22,999</span>
+                            <span class="price-per">per person</span>
+                        </div>
+                        <div class="booking-form">
+                            <div class="form-group">
+                                <label>Travel Date</label>
+                                <input type="date" id="booking-date">
+                            </div>
+                            <div class="form-group">
+                                <label>Number of Travelers</label>
+                                <select id="booking-travelers">
+                                    <option>1 Traveler</option>
+                                    <option>2 Travelers</option>
+                                    <option>3 Travelers</option>
+                                    <option>4 Travelers</option>
+                                </select>
+                            </div>
+                            <div class="total-price">
+                                <span>Total Price</span>
+                                <span class="total-amount">₹22,999</span>
+                            </div>
+                            <a href="javascript:void(0)"
+                                onclick="handlePackageBooking('Manali Adventure Trip', 22999, 5)"
+                                class="btn-book-now">Book Now</a>
+                            <a href="javascript:void(0)" onclick="customizePackage('manali')"
+                                class="btn-customize">Customize Trip</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2024 TravelPlanner. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Simple Gallery Script for this page
+        let currentImageIndex = 0;
+        const images = document.querySelectorAll('.gallery-image');
+        const thumbnails = document.querySelectorAll('.gallery-thumbnails img');
+
+        function showGalleryImage(index) {
+            images.forEach(img => img.classList.remove('active'));
+            thumbnails.forEach(thumb => thumb.classList.remove('active'));
+
+            images[index].classList.add('active');
+            thumbnails[index].classList.add('active');
+            currentImageIndex = index;
+        }
+
+        function nextGalleryImage() {
+            let nextIndex = (currentImageIndex + 1) % images.length;
+            showGalleryImage(nextIndex);
+        }
+
+        function prevGalleryImage() {
+            let prevIndex = (currentImageIndex - 1 + images.length) % images.length;
+            showGalleryImage(prevIndex);
+        }
+
+        // Itinerary Accordion
+        document.querySelectorAll('.itinerary-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const item = header.parentElement;
+                item.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+
+</html>
