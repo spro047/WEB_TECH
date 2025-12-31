@@ -1,4 +1,5 @@
 require('dotenv').config();
+const path = require('path');
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
@@ -18,6 +19,10 @@ mongoose.connect(process.env.MONGO_URI || 'mongodb://localhost:27017/travel_plan
 })
   .then(() => console.log('MongoDB Connected'))
   .catch(err => console.log('MongoDB connection error:', err));
+
+// Serve frontend static files
+app.use(express.static(path.join(__dirname, '../frontend')));
+
 
 // Middleware to verify token
 const protect = async (req, res, next) => {
