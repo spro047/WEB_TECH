@@ -50,4 +50,11 @@ describe('Authentication Flow Tests', function () {
         // We won't click submit to avoid polluting/failing on non-existent user if backend is empty
         // await loginBtn.click();
     });
+
+    it('should display "Forgot Password" link on login page', async function () {
+        await driver.get(baseUrl + '/login.html');
+        const forgotLink = await driver.findElement(By.className('forgot-password'));
+        expect(await forgotLink.isDisplayed()).to.be.true;
+        expect(await forgotLink.getText()).to.equal('Forgot Password?');
+    });
 });
